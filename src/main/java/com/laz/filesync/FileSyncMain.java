@@ -24,7 +24,7 @@ public class FileSyncMain {
 		if (Constants.CLIENT_MODE.equals(conf.getMode())) {
 			new FileSyncServer(conf).start();
 		} else if (Constants.CLIENT_MODE.equals(conf.getMode())) {
-			new FileSyncClient().start(conf);
+			new FileSyncClient(conf).start();
 		} else {
 			System.out.println("模式输入不正确");
 		}
@@ -35,6 +35,7 @@ public class FileSyncMain {
 		Options options = new Options();
 		options.addOption("m", "mode", true, "以客户端还是服务端模式启动 server:服务端 client:客服端");
 		options.addOption("p", "port", false, "运行端口");
+		options.addOption("h", "host", false, "服务端地址");
 		CommandLine commandLine = parser.parse(options, args);//解析参数
 		if (!commandLine.hasOption("m")) {
 			throw new RuntimeException("请输入模式");
@@ -42,6 +43,9 @@ public class FileSyncMain {
 		conf.setMode(commandLine.getOptionValue("m"));
 		if (!commandLine.hasOption("p")) {
 			conf.setPort(Integer.parseInt(commandLine.getOptionValue("p")));
+		}
+		if (!commandLine.hasOption("h")) {
+			conf.setServerIP(commandLine.getOptionValue("h"));
 		}
 		return conf;
 	}
