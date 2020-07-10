@@ -36,6 +36,8 @@ public class FileSyncMain {
 		options.addOption("m", "mode", true, "以客户端还是服务端模式启动 server:服务端 client:客服端");
 		options.addOption("p", "port", false, "运行端口");
 		options.addOption("h", "host", false, "服务端地址");
+		options.addOption("clientPath",  false, "客服端同步目录地址");
+		options.addOption("serverPath",  false, "服务端同步目录地址");
 		CommandLine commandLine = parser.parse(options, args);//解析参数
 		if (!commandLine.hasOption("m")) {
 			throw new RuntimeException("请输入模式");
@@ -46,6 +48,12 @@ public class FileSyncMain {
 		}
 		if (!commandLine.hasOption("h")) {
 			conf.setServerIP(commandLine.getOptionValue("h"));
+		}
+		if (!commandLine.hasOption("clientPath")) {
+			conf.setClientPath(commandLine.getOptionValue("clientPath"));
+		}
+		if (!commandLine.hasOption("serverPath")) {
+			conf.setServerPath(commandLine.getOptionValue("serverPath"));
 		}
 		return conf;
 	}

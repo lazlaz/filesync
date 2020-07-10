@@ -1,5 +1,9 @@
 package com.laz.filesync.conf;
 
+/**
+ * @author laz
+ *
+ */
 public class Configuration {
 	//启动模式
 	private String mode;
@@ -7,6 +11,21 @@ public class Configuration {
 	private int port;
 	//服务端地址
 	private String serverIP;
+	private String clientPath;
+	private String serverPath;
+	
+	public void setClientPath(String clientPath) {
+		this.clientPath = clientPath;
+	}
+	public String getClientPath() {
+		return clientPath;
+	}
+	public void setServerPath(String serverPath) {
+		this.serverPath = serverPath;
+	}
+	public String getServerPath() {
+		return serverPath;
+	}
 	
 	public String getServerIP() {
 		return serverIP;

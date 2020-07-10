@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -18,8 +19,8 @@ import com.laz.filesync.rysnc.util.RsyncException;
  * 文件对比
  *
  */
-public class FileChecksums {
-
+public class FileChecksums implements Serializable{
+	private static final long serialVersionUID = 9065439598214380323L;
 	private String name;
 	private byte[] checksum;
 	private List<BlockChecksums> blockChecksums = new ArrayList<BlockChecksums>();
