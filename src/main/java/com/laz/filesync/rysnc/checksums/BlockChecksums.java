@@ -1,5 +1,6 @@
 package com.laz.filesync.rysnc.checksums;
 
+import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.zip.Adler32;
@@ -14,7 +15,8 @@ import com.laz.filesync.rysnc.util.RsyncException;
  * @author jiuyuehe
  *
  */
-public class BlockChecksums {
+public class BlockChecksums implements Serializable{
+	private static final long serialVersionUID = 6881512258509956424L;
 	private int index;
 	private long offset;
 	private long size;

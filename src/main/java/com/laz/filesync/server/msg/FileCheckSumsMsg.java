@@ -2,6 +2,7 @@ package com.laz.filesync.server.msg;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.laz.filesync.msg.BaseMsg;
 import com.laz.filesync.msg.MsgType;
@@ -15,14 +16,14 @@ import com.laz.filesync.rysnc.checksums.FileChecksums;
 public class FileCheckSumsMsg extends BaseMsg{
 	private static final long serialVersionUID = 1L;
 	//检验和集
-	private List<FileChecksums> checksums;
+	private Map<String,FileChecksums> checksumsMap;
 	
-	public List<FileChecksums> getChecksums() {
-		return checksums;
+	public Map<String, FileChecksums> getChecksumsMap() {
+		return checksumsMap;
 	}
 	
-	public void setChecksums(List<FileChecksums> checksums) {
-		this.checksums = checksums;
+	public void setChecksumsMap(Map<String, FileChecksums> checksumsMap) {
+		this.checksumsMap = checksumsMap;
 	}
 
 	@Override

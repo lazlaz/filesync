@@ -1,6 +1,10 @@
 package com.laz.filesync.client;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.laz.filesync.client.handler.MsgClientHandler;
+import com.laz.filesync.client.msg.RequestMsg;
 import com.laz.filesync.conf.Configuration;
 import com.laz.filesync.server.handler.MsgServerHandler;
 
@@ -26,6 +30,7 @@ public class FileSyncClient {
 	private int port;
 	private String ip;
 	private Configuration conf;
+	private static Logger logger = LoggerFactory.getLogger(FileSyncClient.class);
 
 	public FileSyncClient(Configuration conf) {
 		this.conf = conf;
@@ -50,16 +55,22 @@ public class FileSyncClient {
 						//输入Handler
 						pipeline.addLast("decoder", new ObjectDecoder(1024*1024,
 								ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
-						pipeline.addLast("handler", new MsgClientHandler());
-						
-						
 						//输出Handler
 						pipeline.addLast("encoder", new ObjectEncoder());
+						
+						
+						MsgClientHandler hanler = new MsgClientHandler();
+						hanler.setConf(conf);
+						pipeline.addLast("handler", hanler);
+						
+						
+					
 					}
 				});
 
 		try {
 			ChannelFuture future = bootstrap.connect(ip,port).sync();
+			logger.info("------------客服端启动----------------");
 			future.channel().closeFuture().await();
 		} catch (Exception e) {
 			e.printStackTrace();

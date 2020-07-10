@@ -1,0 +1,30 @@
+[ERROR] 2020-07-10 14:41:21,578 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 14:42:44,207 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 14:44:31,849 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 14:45:26,121 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 14:45:37,680 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 14:54:34,358 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 15:06:59,790 method:com.laz.filesync.client.handler.MsgClientHandler.exceptionCaught(MsgClientHandler.java:75)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 17:08:39,105 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 17:12:08,694 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 17:15:07,828 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 17:15:32,535 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 17:17:06,836 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 18:03:25,128 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 18:04:55,136 method:com.laz.filesync.client.handler.MsgClientHandler.exceptionCaught(MsgClientHandler.java:172)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[ERROR] 2020-07-10 18:06:42,688 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：Adjusted frame length exceeds 1048576: 1347093256 - discarded

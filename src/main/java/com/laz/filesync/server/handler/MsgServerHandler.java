@@ -1,13 +1,15 @@
 package com.laz.filesync.server.handler;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
 
 import com.laz.filesync.client.msg.RequestMsg;
 import com.laz.filesync.msg.BaseMsg;
 import com.laz.filesync.msg.ErrorMsg;
-import com.laz.filesync.msg.MsgType;
 import com.laz.filesync.rysnc.checksums.FileChecksums;
 import com.laz.filesync.server.msg.FileCheckSumsMsg;
 
@@ -15,7 +17,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
-
+	public static final Logger logger = Logger.getLogger(MsgServerHandler.class);
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, BaseMsg msg) throws Exception {
 		switch (msg.getType()) {
@@ -50,10 +52,10 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		}
 		//必须是目录
 		if (folder.isDirectory()) {
-			List<FileChecksums> checksums = new ArrayList<FileChecksums>();
-			getFileCheckSums(folder,checksums);
+			Map<String,FileChecksums> checksums = new HashMap<String,FileChecksums>();
+			getFileCheckSums(folder,folder,checksums);
 			FileCheckSumsMsg checksumsMsg = new FileCheckSumsMsg();
-			checksumsMsg.setChecksums(checksums);
+			checksumsMsg.setChecksumsMap(checksums);
 			msg = checksumsMsg;
 		} else {
 			ErrorMsg errorMsg = new ErrorMsg();
@@ -64,14 +66,17 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		return msg;
 	}
 
-	private void getFileCheckSums(File f, List<FileChecksums> list) {
+	private void getFileCheckSums(File root, File f, Map<String, FileChecksums> map) {
 		if (f.isDirectory()) {
 			for (File file:f.listFiles())  {
-				getFileCheckSums(file,list);
+				getFileCheckSums(root,file,map);
 			}
 		} else {
 			FileChecksums checksums = new FileChecksums(f);
-			list.add(checksums);
+			String rootPath = root.getAbsolutePath();
+			String filePath = f.getAbsolutePath();
+			String path = filePath.substring(rootPath.length()+1,filePath.length());
+			map.put(path,checksums);
 		}
 	}
 
@@ -81,5 +86,14 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		super.channelActive(ctx);
+	}
+	
+	/**
+	 * 异常错误处理
+	 */
+	@Override
+	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+		logger.error("错误原因：" + cause.getMessage());
+		ctx.channel().close();
 	}
 }

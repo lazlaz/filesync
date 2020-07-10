@@ -62,19 +62,13 @@ public class RsyncFileUtils {
 	}
 	
 	/**
-	 * 合并上传临时文件[可优化]
+	 * 合并上传临时文件
 	 * @param srcFile
 	 * @param newFile
 	 * @param rsyncFile
 	 * @throws IOException
 	 */
 	public static void  combineRsyncFile(File srcFile, File newFile,File rsyncFile) throws IOException{
-		//FileChecksums checksums = new FileChecksums(srcFile);
-		
-		//System.out.println(checksums.getHexChecksum());
-		
-		//List<BlockChecksums> blockChecksums = checksums.getBlockChecksums();
-		
 		DiffFileMeta dfm = tmp2Item(rsyncFile);
 		
 		int blockSize = dfm.getBlockSize();

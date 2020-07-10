@@ -5,8 +5,12 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.laz.filesync.client.FileSyncClient;
 import com.laz.filesync.conf.Configuration;
+import com.laz.filesync.server.handler.FileHandler;
 import com.laz.filesync.server.handler.MsgServerHandler;
 
 import io.netty.bootstrap.ServerBootstrap;
@@ -28,10 +32,10 @@ import io.netty.handler.codec.string.StringEncoder;
 /**
  * 文件同步服务端
  * 
- * @author laz
  *
  */
 public class FileSyncServer {
+	private static Logger logger = LoggerFactory.getLogger(FileSyncServer.class);
 	private int port;
 	private Configuration conf;
 
@@ -54,18 +58,17 @@ public class FileSyncServer {
 					@Override
 					protected void initChannel(SocketChannel ch) throws Exception {
 						ChannelPipeline pipeline = ch.pipeline();
-						//输入Handler
+						pipeline.addLast("fileHandler",new FileHandler());
 						pipeline.addLast("decoder", new ObjectDecoder(1024*1024,
 								ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
+						pipeline.addLast("encoder", new ObjectEncoder());
 						pipeline.addLast("handler", new MsgServerHandler());
 						
-						
-						//输出Handler
-						pipeline.addLast("encoder", new ObjectEncoder());
 
 					}
 				});// 通道初始化
 		try {
+			logger.info("---------------------服务端启动--------------------");
 			ChannelFuture future = server.bind(port).sync();
 			future.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
