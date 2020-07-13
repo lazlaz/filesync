@@ -62,8 +62,6 @@ public class FileSyncClient {
 						MsgClientHandler hanler = new MsgClientHandler();
 						hanler.setConf(conf);
 						pipeline.addLast("handler", hanler);
-						
-						
 					
 					}
 				});

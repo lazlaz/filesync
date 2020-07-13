@@ -54,7 +54,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			File tempFolder = getTempFolder();
 			//处理消息，获取最终差异文件zip包路径
 			String zipPath = dealChecksumsMsg(tempFolder, checksumsMsg);
-			RandomAccessFile randomAccessFile = new RandomAccessFile(zipPath, "r");
+			RandomAccessFile randomAccessFile = new RandomAccessFile("d:/word/word.zip", "r");
 			FileRegion region = new DefaultFileRegion(randomAccessFile.getChannel(), 0, randomAccessFile.length());
 			ctx.write(region);
 			// 写入换行符表示文件结束

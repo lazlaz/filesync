@@ -35,6 +35,7 @@ public class FileSyncMain {
 		Options options = new Options();
 		options.addOption("m", "mode", true, "以客户端还是服务端模式启动 server:服务端 client:客服端");
 		options.addOption("p", "port", true, "运行端口");
+		options.addOption("filePort", true, "文件传输监听端口");
 		options.addOption("h", "host", true, "客服端需要连接的服务端地址");
 		options.addOption("clientPath",  true, "客服端同步目录地址");
 		options.addOption("serverPath",  true, "服务端同步目录地址");
@@ -54,6 +55,9 @@ public class FileSyncMain {
 		}
 		if (commandLine.hasOption("serverPath")) {
 			conf.setServerPath(commandLine.getOptionValue("serverPath"));
+		}
+		if (commandLine.hasOption("filePort")) {
+			conf.setFilePort(Integer.parseInt(commandLine.getOptionValue("filePort")));
 		}
 		return conf;
 	}

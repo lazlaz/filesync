@@ -93,6 +93,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	 */
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+		cause.printStackTrace();
 		logger.error("错误原因：" + cause.getMessage());
 		ctx.channel().close();
 	}

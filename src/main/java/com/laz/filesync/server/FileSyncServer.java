@@ -1,33 +1,28 @@
 package com.laz.filesync.server;
 
-import org.apache.commons.cli.BasicParser;
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.Options;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.laz.filesync.client.FileSyncClient;
 import com.laz.filesync.conf.Configuration;
-import com.laz.filesync.server.handler.FileHandler;
+import com.laz.filesync.server.file.handler.FileReceiveServerHandler;
 import com.laz.filesync.server.handler.MsgServerHandler;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.stream.ChunkedWriteHandler;
+import io.netty.util.concurrent.DefaultEventExecutorGroup;
+import io.netty.util.concurrent.EventExecutorGroup;
 
 /**
  * 文件同步服务端
@@ -37,6 +32,7 @@ import io.netty.handler.codec.string.StringEncoder;
 public class FileSyncServer {
 	private static Logger logger = LoggerFactory.getLogger(FileSyncServer.class);
 	private int port;
+	private int filePort;
 	private Configuration conf;
 
 	public FileSyncServer(Configuration conf) {
@@ -46,6 +42,7 @@ public class FileSyncServer {
 
 	private void init() {
 		this.port = conf.getPort() == 0 ? 8989 : conf.getPort();
+		this.filePort = conf.getFilePort() == 0 ? 8990 : conf.getFilePort();
 	}
 
 	public void start() {
@@ -58,18 +55,16 @@ public class FileSyncServer {
 					@Override
 					protected void initChannel(SocketChannel ch) throws Exception {
 						ChannelPipeline pipeline = ch.pipeline();
-						pipeline.addLast("fileHandler",new FileHandler());
 						pipeline.addLast("decoder", new ObjectDecoder(1024*1024,
 								ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
 						pipeline.addLast("encoder", new ObjectEncoder());
 						pipeline.addLast("handler", new MsgServerHandler());
-						
-
 					}
 				});// 通道初始化
 		try {
 			logger.info("---------------------服务端启动--------------------");
 			ChannelFuture future = server.bind(port).sync();
+			startFileServer();
 			future.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -77,6 +72,10 @@ public class FileSyncServer {
 			bossGroup.shutdownGracefully();
 			workGroup.shutdownGracefully();
 		}
+	}
+
+	private void startFileServer() throws InterruptedException {
+		new FileReceiveServer(filePort).start();
 	}
 
 }

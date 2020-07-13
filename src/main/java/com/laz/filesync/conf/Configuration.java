@@ -9,6 +9,8 @@ public class Configuration {
 	private String mode;
 	//绑定端口
 	private int port;
+	//文件传输端口
+	private int filePort;
 	//服务端地址
 	private String serverIP;
 	private String clientPath;
@@ -46,5 +48,12 @@ public class Configuration {
 	
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+	
+	public int getFilePort() {
+		return filePort;
+	}
+	public void setFilePort(int filePort) {
+		this.filePort = filePort;
 	}
 }
