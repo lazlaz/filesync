@@ -7,11 +7,14 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import com.laz.filesync.client.msg.DiffFilesSyncMsg;
 import com.laz.filesync.client.msg.RequestMsg;
 import com.laz.filesync.msg.BaseMsg;
 import com.laz.filesync.msg.ErrorMsg;
 import com.laz.filesync.rysnc.checksums.FileChecksums;
 import com.laz.filesync.server.msg.FileCheckSumsMsg;
+import com.laz.filesync.util.Coder;
+import com.laz.filesync.util.FileSyncUtil;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -32,7 +35,8 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		}
 			break;
 		case SYNC: {
-
+			DiffFilesSyncMsg diffMsg = (DiffFilesSyncMsg) msg; 
+			combineRsyncFile(diffMsg);
 		}
 			break;
 		default:
@@ -40,6 +44,30 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 
 		}
 
+	}
+
+	private void combineRsyncFile(DiffFilesSyncMsg diffMsg) {
+		//进行文件包完整性验证
+		File serverFile = FileSyncUtil.getServerTempFile(diffMsg.getFileName());
+		boolean v;
+		try {
+			v = verify(serverFile,diffMsg.getFileDigest());
+			if (v) {
+				logger.info("文件完整性校验一致");
+			} else {
+				logger.error("文件完整性校验不一致");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private  boolean  verify(File serverFile, String fileDigest) throws Exception {
+		String digest1 = Coder.encryptBASE64(FileSyncUtil.generateFileDigest(serverFile));
+		if (digest1.equals(fileDigest)) {
+			return true;
+		}
+		return false;
 	}
 
 	private BaseMsg dealRequestMsg(RequestMsg requestMsg) {

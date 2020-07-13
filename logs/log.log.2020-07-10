@@ -1,0 +1,1892 @@
+[DEBUG] 2020-07-10 11:49:55,980 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 11:49:55,986 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 11:49:56,033 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 11:49:56,034 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 11:49:56,046 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 11:49:56,047 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 11:49:56,081 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 11:49:56,086 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 11:49:56,086 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 11:49:56,089 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 11:49:56,090 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 11:49:56,091 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 11:49:56,092 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 11:49:56,093 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 11:49:56,094 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 11:49:56,094 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 11:49:56,095 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 11:49:56,096 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 11:49:56,097 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 11:49:56,101 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 11:49:56,101 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 11:49:56,103 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 11:49:56,104 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 11:49:56,119 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[INFO ] 2020-07-10 11:49:56,224 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:73)
+---------------------服务端启动--------------------
+[DEBUG] 2020-07-10 11:49:56,238 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 49132 (auto-detected)
+[DEBUG] 2020-07-10 11:49:56,242 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 11:49:56,242 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 11:49:56,392 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 11:49:56,393 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 11:49:56,554 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 11:49:56,574 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 11:49:56,575 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 11:49:56,617 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 11:49:56,617 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 11:49:56,617 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 11:49:56,618 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 11:49:56,618 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 11:49:56,618 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 11:49:56,619 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 11:49:56,619 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 11:49:56,619 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 11:49:56,619 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 11:49:56,619 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 11:49:56,619 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 11:49:56,620 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 11:49:56,633 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 11:49:56,633 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 11:49:56,633 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[INFO ] 2020-07-10 11:50:13,669 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:73)
+---------------------服务端启动--------------------
+[DEBUG] 2020-07-10 11:50:37,500 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 11:50:37,507 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 11:50:37,554 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 11:50:37,554 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 11:50:37,567 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 11:50:37,567 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 11:50:37,596 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 11:50:37,599 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 11:50:37,600 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 11:50:37,602 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 11:50:37,604 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 11:50:37,605 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 11:50:37,606 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 11:50:37,607 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 11:50:37,608 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 11:50:37,608 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 11:50:37,610 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 11:50:37,611 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 11:50:37,612 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 11:50:37,615 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 11:50:37,615 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 11:50:37,618 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 11:50:37,619 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 11:50:37,633 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[INFO ] 2020-07-10 11:50:37,746 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:73)
+---------------------服务端启动--------------------
+[DEBUG] 2020-07-10 11:50:37,757 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 45804 (auto-detected)
+[DEBUG] 2020-07-10 11:50:37,760 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 11:50:37,760 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 11:50:37,907 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 11:50:37,908 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 11:50:38,067 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 11:50:38,082 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 11:50:38,083 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 11:50:38,124 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 11:50:38,125 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 11:50:38,125 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 11:50:38,125 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 11:50:38,125 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 11:50:38,125 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 11:50:38,125 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 11:50:38,126 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 11:50:38,126 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 11:50:38,126 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 11:50:38,126 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 11:50:38,126 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 11:50:38,127 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 11:50:38,138 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 11:50:38,138 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 11:50:38,138 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[INFO ] 2020-07-10 11:52:22,411 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:73)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 11:52:32,275 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:70)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:11:53,279 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2020-07-10 14:11:59,293 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:70)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:12:40,960 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2020-07-10 14:14:08,185 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:14:48,728 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2020-07-10 14:16:44,040 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:17:37,280 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2020-07-10 14:17:41,268 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[INFO ] 2020-07-10 14:20:21,820 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:21:44,974 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[WARN ] 2020-07-10 14:21:52,198 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2020-07-10 14:24:12,290 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:26:05,652 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:26:09,183 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:26:09,190 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:26:09,221 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:26:09,222 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:26:09,234 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:26:09,234 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:26:09,270 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:26:09,273 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:26:09,273 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:26:09,275 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:26:09,277 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:26:09,277 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:26:09,278 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:26:09,280 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:26:09,280 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:26:09,280 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:26:09,282 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:26:09,283 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:26:09,283 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:26:09,286 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:26:09,287 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:26:09,290 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:26:09,290 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:26:09,307 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:26:09,415 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 26180 (auto-detected)
+[DEBUG] 2020-07-10 14:26:09,421 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:26:09,421 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:26:09,569 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:26:09,570 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:26:09,745 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:26:09,764 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:26:09,765 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:26:09,802 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:26:09,803 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:26:09,803 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:26:09,803 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:26:09,803 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:26:09,803 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:26:09,804 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:26:09,804 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:26:09,804 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:26:09,804 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:26:09,804 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:26:09,805 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:26:09,805 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:26:09,815 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:26:09,816 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:26:09,816 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:26:09,869 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:26:09,869 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:26:09,870 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:26:09,870 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:26:09,870 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:26:09,875 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:26:09,895 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:26:09,895 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:26:09,897 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@16ee779
+[WARN ] 2020-07-10 14:26:29,472 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:26:35,094 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:26:35,100 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:26:35,141 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:26:35,142 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:26:35,156 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:26:35,156 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:26:35,190 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:26:35,193 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:26:35,193 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:26:35,195 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:26:35,196 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:26:35,197 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:26:35,198 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:26:35,199 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:26:35,199 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:26:35,199 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:26:35,201 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:26:35,201 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:26:35,202 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:26:35,203 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:26:35,204 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:26:35,205 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:26:35,205 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:26:35,217 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:26:35,324 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 33716 (auto-detected)
+[DEBUG] 2020-07-10 14:26:35,330 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:26:35,330 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:26:35,486 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:26:35,487 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:26:35,656 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:26:35,674 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:26:35,674 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:26:35,710 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:26:35,711 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:26:35,711 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:26:35,711 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:26:35,712 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:26:35,712 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:26:35,712 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:26:35,712 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:26:35,713 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:26:35,713 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:26:35,713 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:26:35,714 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:26:35,714 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:26:35,726 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:26:35,727 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:26:35,727 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:26:35,780 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:26:35,780 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:26:35,780 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:26:35,781 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:26:35,781 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:26:35,784 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:26:35,805 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:26:35,805 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:26:35,807 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@2e9fe94f
+[WARN ] 2020-07-10 14:26:42,156 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:26:49,553 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:26:49,560 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:26:49,604 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:26:49,605 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:26:49,620 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:26:49,621 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:26:49,661 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:26:49,664 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:26:49,664 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:26:49,666 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:26:49,667 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:26:49,668 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:26:49,669 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:26:49,669 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:26:49,670 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:26:49,670 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:26:49,672 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:26:49,674 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:26:49,674 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:26:49,676 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:26:49,676 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:26:49,679 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:26:49,679 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:26:49,692 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:26:49,805 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 49880 (auto-detected)
+[DEBUG] 2020-07-10 14:26:49,810 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:26:49,810 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:26:49,962 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:26:49,963 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:26:50,119 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:26:50,136 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:26:50,136 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:26:50,176 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:26:50,176 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:26:50,177 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:26:50,177 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:26:50,177 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:26:50,178 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:26:50,178 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:26:50,178 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:26:50,179 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:26:50,179 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:26:50,179 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:26:50,179 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:26:50,180 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:26:50,195 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:26:50,196 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:26:50,196 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:26:50,249 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:26:50,249 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:26:50,250 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:26:50,250 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:26:50,250 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:26:50,253 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:26:50,276 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:26:50,276 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:26:50,277 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@421e07ed
+[WARN ] 2020-07-10 14:26:54,012 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:27:00,340 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:27:00,348 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:27:00,390 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:27:00,391 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:27:00,404 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:27:00,404 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:27:00,434 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:27:00,436 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:27:00,437 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:27:00,439 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:27:00,439 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:27:00,440 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:27:00,441 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:27:00,442 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:27:00,443 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:27:00,443 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:27:00,444 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:27:00,445 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:27:00,445 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:27:00,447 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:27:00,447 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:27:00,449 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:27:00,450 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:27:00,465 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:27:00,594 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 10892 (auto-detected)
+[DEBUG] 2020-07-10 14:27:00,600 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:27:00,600 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:27:00,746 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:27:00,747 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:27:00,906 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:27:00,926 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:27:00,926 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:27:00,964 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:27:00,964 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:27:00,965 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:27:00,965 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:27:00,965 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:27:00,966 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:27:00,966 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:27:00,966 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:27:00,967 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:27:00,967 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:27:00,967 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:27:00,967 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:27:00,968 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:27:00,980 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:27:00,981 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:27:00,981 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:27:01,042 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:27:01,042 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:27:01,042 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:27:01,043 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:27:01,043 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:27:01,046 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:27:01,065 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:27:01,066 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:27:01,067 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@2e9fe94f
+[WARN ] 2020-07-10 14:28:25,796 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:28:27,836 method:io.netty.buffer.PoolThreadCache.free(PoolThreadCache.java:247)
+Freed 2 thread-local buffer(s) from thread: nioEventLoopGroup-2-1
+[DEBUG] 2020-07-10 14:28:33,210 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:28:33,216 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:28:33,258 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:28:33,259 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:28:33,273 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:28:33,273 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:28:33,314 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:28:33,318 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:28:33,318 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:28:33,320 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:28:33,321 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:28:33,322 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:28:33,324 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:28:33,325 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:28:33,325 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:28:33,326 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:28:33,327 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:28:33,329 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:28:33,329 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:28:33,331 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:28:33,332 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:28:33,334 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:28:33,334 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:28:33,348 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:28:33,466 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 16432 (auto-detected)
+[DEBUG] 2020-07-10 14:28:33,470 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:28:33,471 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:28:33,618 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:28:33,619 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:28:33,780 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:28:33,797 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:28:33,798 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:28:33,838 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:28:33,839 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:28:33,839 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:28:33,839 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:28:33,839 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:28:33,840 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:28:33,840 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:28:33,840 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:28:33,840 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:28:33,840 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:28:33,840 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:28:33,841 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:28:33,841 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:28:33,851 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:28:33,852 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:28:33,852 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:29:12,197 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:29:12,203 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:29:12,243 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:29:12,243 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:29:12,254 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:29:12,254 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:29:12,279 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:29:12,281 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:29:12,282 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:29:12,284 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:29:12,285 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:29:12,285 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:29:12,286 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:29:12,288 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:29:12,289 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:29:12,289 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:29:12,291 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:29:12,292 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:29:12,292 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:29:12,294 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:29:12,295 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:29:12,297 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:29:12,297 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:29:12,314 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[INFO ] 2020-07-10 14:29:12,412 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[DEBUG] 2020-07-10 14:29:12,423 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 28688 (auto-detected)
+[DEBUG] 2020-07-10 14:29:12,427 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:29:12,428 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:29:12,573 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:29:12,574 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:29:12,741 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:29:12,764 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:29:12,764 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:29:12,807 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:29:12,807 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:29:12,808 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:29:12,808 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:29:12,808 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:29:12,808 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:29:12,809 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:29:12,809 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:29:12,809 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:29:12,809 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:29:12,809 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:29:12,810 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:29:12,810 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:29:12,820 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:29:12,821 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:29:12,821 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:29:28,896 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:29:28,902 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:29:28,937 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:29:28,938 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:29:28,950 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:29:28,951 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:29:28,992 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:29:28,995 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:29:28,995 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:29:28,997 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:29:28,998 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:29:29,000 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:29:29,001 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:29:29,002 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:29:29,003 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:29:29,003 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:29:29,004 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:29:29,007 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:29:29,008 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:29:29,010 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:29:29,011 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:29:29,013 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:29:29,014 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:29:29,030 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:29:29,132 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 52684 (auto-detected)
+[DEBUG] 2020-07-10 14:29:29,135 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:29:29,136 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:29:29,283 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:29:29,284 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:29:29,464 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:29:29,484 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:29:29,484 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:29:29,526 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:29:29,526 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:29:29,526 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:29:29,526 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:29:29,527 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:29:29,527 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:29:29,527 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:29:29,527 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:29:29,527 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:29:29,528 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:29:29,528 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:29:29,528 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:29:29,528 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:29:29,541 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:29:29,541 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:29:29,541 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:30:08,299 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:30:08,300 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:30:08,300 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:30:08,300 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:30:08,300 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:30:08,303 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:76)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:30:08,316 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:30:08,316 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:30:08,318 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@57808e56
+[DEBUG] 2020-07-10 14:30:08,338 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:30:08,338 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:30:08,338 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:30:08,339 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:30:08,339 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[DEBUG] 2020-07-10 14:30:08,349 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:30:08,352 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:30:08,354 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@2cce5dfb
+[WARN ] 2020-07-10 14:32:06,255 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:32:08,293 method:io.netty.buffer.PoolThreadCache.free(PoolThreadCache.java:247)
+Freed 2 thread-local buffer(s) from thread: nioEventLoopGroup-2-1
+[DEBUG] 2020-07-10 14:32:37,020 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:32:37,029 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:32:37,071 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:32:37,072 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:32:37,086 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:32:37,087 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:32:37,123 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:32:37,125 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:32:37,126 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:32:37,129 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:32:37,130 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:32:37,131 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:32:37,131 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:32:37,133 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:32:37,133 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:32:37,133 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:32:37,135 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:32:37,136 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:32:37,137 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:32:37,140 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:32:37,141 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:32:37,142 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:32:37,143 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:32:37,158 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[INFO ] 2020-07-10 14:32:37,355 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[DEBUG] 2020-07-10 14:32:37,369 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 3196 (auto-detected)
+[DEBUG] 2020-07-10 14:32:37,372 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:32:37,373 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:32:37,527 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:32:37,528 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:32:37,759 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:32:37,775 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:32:37,776 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:32:37,815 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:32:37,815 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:32:37,815 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:32:37,815 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:32:37,816 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:32:37,816 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:32:37,816 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:32:37,816 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:32:37,816 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:32:37,817 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:32:37,817 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:32:37,817 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:32:37,817 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:32:37,829 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:32:37,829 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:32:37,830 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:32:46,658 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:32:46,664 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:32:46,701 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:32:46,702 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:32:46,714 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:32:46,715 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:32:46,746 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:32:46,749 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:32:46,749 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:32:46,751 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:32:46,752 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:32:46,753 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:32:46,754 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:32:46,756 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:32:46,756 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:32:46,756 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:32:46,758 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:32:46,759 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:32:46,759 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:32:46,761 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:32:46,761 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:32:46,763 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:32:46,763 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:32:46,778 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:32:46,886 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 62984 (auto-detected)
+[DEBUG] 2020-07-10 14:32:46,892 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:32:46,893 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:32:47,036 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:32:47,037 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:32:47,194 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:32:47,214 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:32:47,214 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:32:47,254 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:32:47,255 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:32:47,255 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:32:47,255 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:32:47,256 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:32:47,256 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:32:47,256 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:32:47,256 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:32:47,257 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:32:47,257 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:32:47,257 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:32:47,258 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:32:47,258 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:32:47,271 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:32:47,272 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:32:47,272 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:32:50,981 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:32:50,981 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:32:50,981 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:32:50,981 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:32:50,982 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:32:50,985 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:78)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:32:51,006 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:32:51,006 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:32:51,008 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@2e9fe94f
+[DEBUG] 2020-07-10 14:32:51,028 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:32:51,029 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:32:51,029 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:32:51,029 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:32:51,030 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[DEBUG] 2020-07-10 14:32:51,043 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:32:51,045 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:32:51,047 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@c77f2f2
+[WARN ] 2020-07-10 14:33:29,124 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:33:32,337 method:io.netty.util.internal.logging.InternalLoggerFactory.newDefaultFactory(InternalLoggerFactory.java:45)
+Using SLF4J as the default logging framework
+[DEBUG] 2020-07-10 14:33:32,345 method:io.netty.channel.MultithreadEventLoopGroup.<clinit>(MultithreadEventLoopGroup.java:44)
+-Dio.netty.eventLoopThreads: 16
+[DEBUG] 2020-07-10 14:33:32,386 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:56)
+-Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[DEBUG] 2020-07-10 14:33:32,387 method:io.netty.util.internal.InternalThreadLocalMap.<clinit>(InternalThreadLocalMap.java:59)
+-Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[DEBUG] 2020-07-10 14:33:32,405 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:106)
+-Dio.netty.noKeySetOptimization: false
+[DEBUG] 2020-07-10 14:33:32,405 method:io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:107)
+-Dio.netty.selectorAutoRebuildThreshold: 512
+[DEBUG] 2020-07-10 14:33:32,452 method:io.netty.util.internal.PlatformDependent.isWindows0(PlatformDependent.java:1015)
+Platform: Windows
+[DEBUG] 2020-07-10 14:33:32,456 method:io.netty.util.internal.PlatformDependent0.explicitNoUnsafeCause0(PlatformDependent0.java:408)
+-Dio.netty.noUnsafe: false
+[DEBUG] 2020-07-10 14:33:32,456 method:io.netty.util.internal.PlatformDependent0.javaVersion0(PlatformDependent0.java:876)
+Java version: 8
+[DEBUG] 2020-07-10 14:33:32,460 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:125)
+sun.misc.Unsafe.theUnsafe: available
+[DEBUG] 2020-07-10 14:33:32,462 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:149)
+sun.misc.Unsafe.copyMemory: available
+[DEBUG] 2020-07-10 14:33:32,463 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:187)
+java.nio.Buffer.address: available
+[DEBUG] 2020-07-10 14:33:32,464 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:252)
+direct buffer constructor: available
+[DEBUG] 2020-07-10 14:33:32,466 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:326)
+java.nio.Bits.unaligned: available, true
+[DEBUG] 2020-07-10 14:33:32,466 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:391)
+jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+[DEBUG] 2020-07-10 14:33:32,467 method:io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:398)
+java.nio.DirectByteBuffer.<init>(long, int): available
+[DEBUG] 2020-07-10 14:33:32,468 method:io.netty.util.internal.PlatformDependent.unsafeUnavailabilityCause0(PlatformDependent.java:1058)
+sun.misc.Unsafe: available
+[DEBUG] 2020-07-10 14:33:32,469 method:io.netty.util.internal.PlatformDependent.tmpdir0(PlatformDependent.java:1177)
+-Dio.netty.tmpdir: C:\Users\lz578\AppData\Local\Temp (java.io.tmpdir)
+[DEBUG] 2020-07-10 14:33:32,470 method:io.netty.util.internal.PlatformDependent.bitMode0(PlatformDependent.java:1256)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] 2020-07-10 14:33:32,471 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:177)
+-Dio.netty.maxDirectMemory: 2852126720 bytes
+[DEBUG] 2020-07-10 14:33:32,472 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:184)
+-Dio.netty.uninitializedArrayAllocationThreshold: -1
+[DEBUG] 2020-07-10 14:33:32,475 method:io.netty.util.internal.CleanerJava6.<clinit>(CleanerJava6.java:92)
+java.nio.ByteBuffer.cleaner(): available
+[DEBUG] 2020-07-10 14:33:32,476 method:io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:204)
+-Dio.netty.noPreferDirect: false
+[DEBUG] 2020-07-10 14:33:32,492 method:io.netty.util.internal.PlatformDependent$Mpsc.<clinit>(PlatformDependent.java:919)
+org.jctools-core.MpscChunkedArrayQueue: available
+[DEBUG] 2020-07-10 14:33:32,599 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:79)
+-Dio.netty.processId: 3680 (auto-detected)
+[DEBUG] 2020-07-10 14:33:32,604 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:139)
+-Djava.net.preferIPv4Stack: false
+[DEBUG] 2020-07-10 14:33:32,605 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:140)
+-Djava.net.preferIPv6Addresses: false
+[DEBUG] 2020-07-10 14:33:32,748 method:io.netty.util.NetUtil.<clinit>(NetUtil.java:224)
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[DEBUG] 2020-07-10 14:33:32,749 method:io.netty.util.NetUtil$1.run(NetUtil.java:289)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+[DEBUG] 2020-07-10 14:33:32,905 method:io.netty.channel.DefaultChannelId.<clinit>(DefaultChannelId.java:101)
+-Dio.netty.machineId: 00:50:56:ff:fe:c0:00:01 (auto-detected)
+[DEBUG] 2020-07-10 14:33:32,923 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:130)
+-Dio.netty.leakDetection.level: simple
+[DEBUG] 2020-07-10 14:33:32,924 method:io.netty.util.ResourceLeakDetector.<clinit>(ResourceLeakDetector.java:131)
+-Dio.netty.leakDetection.targetRecords: 4
+[DEBUG] 2020-07-10 14:33:32,969 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:156)
+-Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] 2020-07-10 14:33:32,969 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:157)
+-Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] 2020-07-10 14:33:32,970 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:159)
+-Dio.netty.allocator.pageSize: 8192
+[DEBUG] 2020-07-10 14:33:32,970 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:164)
+-Dio.netty.allocator.maxOrder: 11
+[DEBUG] 2020-07-10 14:33:32,970 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:168)
+-Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] 2020-07-10 14:33:32,971 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:169)
+-Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] 2020-07-10 14:33:32,971 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:170)
+-Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] 2020-07-10 14:33:32,971 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:171)
+-Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] 2020-07-10 14:33:32,971 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:172)
+-Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] 2020-07-10 14:33:32,972 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:173)
+-Dio.netty.allocator.cacheTrimInterval: 8192
+[DEBUG] 2020-07-10 14:33:32,972 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:174)
+-Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[DEBUG] 2020-07-10 14:33:32,972 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:175)
+-Dio.netty.allocator.useCacheForAllThreads: true
+[DEBUG] 2020-07-10 14:33:32,972 method:io.netty.buffer.PooledByteBufAllocator.<clinit>(PooledByteBufAllocator.java:176)
+-Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[DEBUG] 2020-07-10 14:33:32,985 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:86)
+-Dio.netty.allocator.type: pooled
+[DEBUG] 2020-07-10 14:33:32,985 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:95)
+-Dio.netty.threadLocalDirectBufferSize: 0
+[DEBUG] 2020-07-10 14:33:32,986 method:io.netty.buffer.ByteBufUtil.<clinit>(ByteBufUtil.java:98)
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+[DEBUG] 2020-07-10 14:33:33,044 method:io.netty.util.Recycler.<clinit>(Recycler.java:100)
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+[DEBUG] 2020-07-10 14:33:33,044 method:io.netty.util.Recycler.<clinit>(Recycler.java:101)
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+[DEBUG] 2020-07-10 14:33:33,045 method:io.netty.util.Recycler.<clinit>(Recycler.java:102)
+-Dio.netty.recycler.linkCapacity: 16
+[DEBUG] 2020-07-10 14:33:33,045 method:io.netty.util.Recycler.<clinit>(Recycler.java:103)
+-Dio.netty.recycler.ratio: 8
+[DEBUG] 2020-07-10 14:33:33,045 method:io.netty.util.Recycler.<clinit>(Recycler.java:104)
+-Dio.netty.recycler.delayedQueue.ratio: 8
+[INFO ] 2020-07-10 14:33:33,049 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:78)
+------------客服端启动----------------
+[DEBUG] 2020-07-10 14:33:33,072 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:63)
+-Dio.netty.buffer.checkAccessible: true
+[DEBUG] 2020-07-10 14:33:33,072 method:io.netty.buffer.AbstractByteBuf.<clinit>(AbstractByteBuf.java:64)
+-Dio.netty.buffer.checkBounds: true
+[DEBUG] 2020-07-10 14:33:33,074 method:io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory.newResourceLeakDetector(ResourceLeakDetectorFactory.java:195)
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@421e07ed
+[WARN ] 2020-07-10 14:35:22,889 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[DEBUG] 2020-07-10 14:35:24,992 method:io.netty.buffer.PoolThreadCache.free(PoolThreadCache.java:247)
+Freed 2 thread-local buffer(s) from thread: nioEventLoopGroup-2-1
+[INFO ] 2020-07-10 14:35:57,173 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 14:36:12,231 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:78)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:39:23,314 method:io.netty.channel.DefaultChannelPipeline.onUnhandledInboundException(DefaultChannelPipeline.java:1152)
+An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2020-07-10 14:39:49,566 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 14:40:00,094 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[ERROR] 2020-07-10 14:41:21,578 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 14:41:41,632 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[ERROR] 2020-07-10 14:42:44,207 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 14:42:48,313 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[ERROR] 2020-07-10 14:44:31,849 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 14:44:35,711 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[WARN ] 2020-07-10 14:44:57,527 method:io.netty.util.internal.PromiseNotificationUtil.tryFailure(PromiseNotificationUtil.java:69)
+Failed to mark a promise as failure because it has failed already: DefaultChannelPromise@6916d8ae(failure: io.netty.handler.codec.EncoderException: java.io.NotSerializableException: com.laz.filesync.rysnc.checksums.BlockChecksums), unnotified cause: io.netty.handler.codec.EncoderException: java.io.NotSerializableException: com.laz.filesync.rysnc.checksums.BlockChecksums
+	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:790)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:758)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:808)
+	at com.laz.filesync.server.handler.MsgServerHandler.channelRead0(MsgServerHandler.java:27)
+	at com.laz.filesync.server.handler.MsgServerHandler.channelRead0(MsgServerHandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.NotSerializableException: com.laz.filesync.rysnc.checksums.BlockChecksums
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at io.netty.handler.codec.serialization.ObjectEncoder.encode(ObjectEncoder.java:49)
+	at io.netty.handler.codec.serialization.ObjectEncoder.encode(ObjectEncoder.java:36)
+	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:107)
+	... 29 more
+
+io.netty.handler.codec.EncoderException: java.io.NotSerializableException: com.laz.filesync.rysnc.checksums.BlockChecksums
+	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:790)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:758)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:808)
+	at com.laz.filesync.server.handler.MsgServerHandler.channelRead0(MsgServerHandler.java:27)
+	at com.laz.filesync.server.handler.MsgServerHandler.channelRead0(MsgServerHandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.NotSerializableException: com.laz.filesync.rysnc.checksums.BlockChecksums
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:762)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at io.netty.handler.codec.serialization.ObjectEncoder.encode(ObjectEncoder.java:49)
+	at io.netty.handler.codec.serialization.ObjectEncoder.encode(ObjectEncoder.java:36)
+	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:107)
+	... 29 more
+[ERROR] 2020-07-10 14:45:26,121 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 14:45:30,941 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[ERROR] 2020-07-10 14:45:37,680 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 14:53:36,919 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 14:53:43,387 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 14:53:52,888 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 14:53:53,021 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:54)
+收到服务端的文件检验和集信息
+[INFO ] 2020-07-10 14:53:53,022 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:55)
+1
+[ERROR] 2020-07-10 14:54:34,358 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:93)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 14:54:39,892 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 14:55:30,848 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:54)
+收到服务端的文件检验和集信息
+[INFO ] 2020-07-10 14:55:30,848 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:55)
+1
+[ERROR] 2020-07-10 15:06:59,790 method:com.laz.filesync.client.handler.MsgClientHandler.exceptionCaught(MsgClientHandler.java:75)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 17:07:45,947 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 17:08:03,198 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 17:08:07,915 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:67)
+收到服务端的文件检验和集信息1
+[ERROR] 2020-07-10 17:08:39,105 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 17:08:44,575 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 17:08:44,635 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:67)
+收到服务端的文件检验和集信息1
+[ERROR] 2020-07-10 17:12:08,694 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 17:13:16,409 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 17:13:29,044 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 17:13:29,153 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:67)
+收到服务端的文件检验和集信息1
+[INFO ] 2020-07-10 17:13:29,165 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFile(MsgClientHandler.java:93)
+滚动计算： spend time :11ms
+[ERROR] 2020-07-10 17:15:07,828 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 17:15:12,319 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 17:15:12,385 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:67)
+收到服务端的文件检验和集信息1
+[INFO ] 2020-07-10 17:15:12,395 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFile(MsgClientHandler.java:93)
+滚动计算： spend time :9ms
+[INFO ] 2020-07-10 17:15:12,399 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFileOnTempFolder(MsgClientHandler.java:120)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff2020-6-10- 17-15-12
+[ERROR] 2020-07-10 17:15:32,535 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 17:15:39,363 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 17:15:39,420 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:67)
+收到服务端的文件检验和集信息1
+[INFO ] 2020-07-10 17:15:39,431 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFile(MsgClientHandler.java:93)
+滚动计算： spend time :10ms
+[INFO ] 2020-07-10 17:15:39,435 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFileOnTempFolder(MsgClientHandler.java:120)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff2020-6-10-17-15-39
+[ERROR] 2020-07-10 17:17:06,836 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 17:59:10,141 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 17:59:22,264 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[ERROR] 2020-07-10 18:03:25,128 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 18:03:29,237 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[ERROR] 2020-07-10 18:04:55,136 method:com.laz.filesync.client.handler.MsgClientHandler.exceptionCaught(MsgClientHandler.java:172)
+错误原因：远程主机强迫关闭了一个现有的连接。
+[INFO ] 2020-07-10 18:06:32,450 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:72)
+---------------------服务端启动--------------------
+[INFO ] 2020-07-10 18:06:42,491 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-10 18:06:42,662 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:100)
+收到服务端的文件检验和集信息1
+[INFO ] 2020-07-10 18:06:42,673 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFile(MsgClientHandler.java:133)
+滚动计算： spend time :10ms
+[INFO ] 2020-07-10 18:06:42,676 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:107)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff-2020-7-10-18-6-42
+[ERROR] 2020-07-10 18:06:42,688 method:com.laz.filesync.server.handler.MsgServerHandler.exceptionCaught(MsgServerHandler.java:96)
+错误原因：Adjusted frame length exceeds 1048576: 1347093256 - discarded
+[INFO ] 2020-07-10 18:07:11,335 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:73)
+------------客服端启动----------------
+[INFO ] 2020-07-13 09:28:51,957 method:com.laz.filesync.server.FileSyncServer.start(FileSyncServer.java:71)
+---------------------服务端启动--------------------

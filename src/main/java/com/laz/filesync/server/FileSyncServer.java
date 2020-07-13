@@ -77,5 +77,11 @@ public class FileSyncServer {
 	private void startFileServer() throws InterruptedException {
 		new FileReceiveServer(filePort).start();
 	}
+	
+	public static void main(String[] args) {
+		Configuration conf = new Configuration();
+		conf.setServerIP("127.0.0.1");
+		new FileSyncServer(conf).start();
+	}
 
 }

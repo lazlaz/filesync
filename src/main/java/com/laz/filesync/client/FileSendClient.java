@@ -3,6 +3,7 @@ package com.laz.filesync.client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.laz.filesync.client.file.handler.MessageEncoder;
 import com.laz.filesync.server.file.handler.FileSendClientHandler;
 
 import io.netty.bootstrap.Bootstrap;
@@ -20,7 +21,12 @@ public class FileSendClient {
 	
 	public FileSendClient(String host,int port) {
 		this.host = host;
-		this.port = port;
+		this.port = port==0?8990:port;
+	}
+	private Channel channel;
+	
+	public Channel getChannel() {
+		return channel;
 	}
 	public void start() {
 		Bootstrap bootstrap = new Bootstrap();
@@ -31,7 +37,9 @@ public class FileSendClient {
 					@Override
 					protected void initChannel(NioSocketChannel channel) throws Exception {
 						ChannelPipeline pipeline = channel.pipeline();
-						pipeline.addLast(new FileSendClientHandler());
+						pipeline.addLast(new MessageEncoder());
+					//	pipeline.addLast(new FileSendClientHandler());
+						
 					}
 				});
 
@@ -40,11 +48,10 @@ public class FileSendClient {
 			future = bootstrap.connect(host, port).sync();
 			if (future.isSuccess()) {
 				logger.info("文件服务器连接成功");
-				Channel channel = future.channel();
+				this.channel = future.channel();
 			} else {
 				logger.info("文件服务器连接失败");
 			}
-			future.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

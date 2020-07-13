@@ -2,30 +2,32 @@ package com.laz.filesync.client.handler;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import com.laz.filesync.client.FileSendClient;
 import com.laz.filesync.client.msg.DiffFilesSyncMsg;
 import com.laz.filesync.client.msg.RequestMsg;
 import com.laz.filesync.conf.Configuration;
 import com.laz.filesync.msg.BaseMsg;
+import com.laz.filesync.msg.ErrorMsg;
 import com.laz.filesync.rysnc.checksums.DiffCheckItem;
 import com.laz.filesync.rysnc.checksums.FileChecksums;
 import com.laz.filesync.rysnc.checksums.RollingChecksum;
 import com.laz.filesync.rysnc.util.Constants;
 import com.laz.filesync.rysnc.util.RsyncFileUtils;
 import com.laz.filesync.server.msg.FileCheckSumsMsg;
+import com.laz.filesync.server.msg.FileInfo;
+import com.laz.filesync.util.Coder;
 import com.laz.filesync.util.FileSyncUtil;
 import com.laz.filesync.util.ZipUtils;
 
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.DefaultFileRegion;
-import io.netty.channel.FileRegion;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
@@ -54,22 +56,54 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			File tempFolder = getTempFolder();
 			//处理消息，获取最终差异文件zip包路径
 			String zipPath = dealChecksumsMsg(tempFolder, checksumsMsg);
-			RandomAccessFile randomAccessFile = new RandomAccessFile("d:/word/word.zip", "r");
-			FileRegion region = new DefaultFileRegion(randomAccessFile.getChannel(), 0, randomAccessFile.length());
-			ctx.write(region);
-			// 写入换行符表示文件结束
-			ctx.writeAndFlush(CR);
-			randomAccessFile.close();
+			sendFile(ctx,zipPath);
 		}
 			break;
 		case SYNC: {
 
 		}
 			break;
+		case ERROR: {
+			ErrorMsg error = (ErrorMsg)msg;
+			logger.error("code"+error.getCode()+" msg:"+error.getMsg());
+			ctx.channel().close();
+		}
+			break;
 		default:
 			break;
 
 		}
+	}
+
+	private void sendFile(ChannelHandlerContext ctx, String zipPath) {
+		Channel channel = connectFileSever();
+		if (channel != null && channel.isActive()) {
+			File file = new File(zipPath);
+			DefaultFileRegion fileRegion = new DefaultFileRegion(file, 0, file.length());
+			FileInfo info = new FileInfo();
+			info.setFilename(file.getName());
+			info.setLength(file.length());
+			channel.writeAndFlush(info);
+			channel.writeAndFlush(fileRegion).addListener(future -> {
+				if (future.isSuccess()) {
+					logger.info(file.getAbsolutePath()+"文件传输完成");
+					//通知服务端进行md5验证传输完整性，并进行文件合并
+					DiffFilesSyncMsg msg  = new DiffFilesSyncMsg();
+					msg.setFileDigest(Coder.encryptBASE64(FileSyncUtil.generateFileDigest(file)));
+					msg.setLength(file.length());
+					msg.setFileName(file.getName());
+					ctx.writeAndFlush(msg);
+				}
+			});
+		} else {
+			logger.error("连接文件服务器失败");
+		}
+	}
+
+	private Channel connectFileSever() {
+		FileSendClient fileClient = new FileSendClient(conf.getServerIP(), conf.getFilePort());
+		fileClient.start();
+		return fileClient.getChannel();
 	}
 
 	private File getTempFolder() {

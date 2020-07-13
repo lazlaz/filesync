@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import com.laz.filesync.client.handler.MsgClientHandler;
 import com.laz.filesync.client.msg.RequestMsg;
 import com.laz.filesync.conf.Configuration;
+import com.laz.filesync.server.FileSyncServer;
 import com.laz.filesync.server.handler.MsgServerHandler;
 
 import io.netty.bootstrap.Bootstrap;
@@ -48,7 +49,6 @@ public class FileSyncClient {
 		Bootstrap bootstrap = new Bootstrap();
 		bootstrap.group(group).channel(NioSocketChannel.class)
 				.handler(new ChannelInitializer<SocketChannel>(){
-
 					@Override
 					protected void initChannel(SocketChannel ch) throws Exception {
 						ChannelPipeline pipeline = ch.pipeline();
@@ -62,7 +62,6 @@ public class FileSyncClient {
 						MsgClientHandler hanler = new MsgClientHandler();
 						hanler.setConf(conf);
 						pipeline.addLast("handler", hanler);
-					
 					}
 				});
 
@@ -75,5 +74,13 @@ public class FileSyncClient {
 		} finally {
 			group.shutdownGracefully();
 		}
+	}
+	
+	public static void main(String[] args) {
+		Configuration conf = new Configuration();
+		conf.setClientPath("d:/filesync/client");
+		conf.setServerPath("d:/filesync/server");
+		conf.setServerIP("127.0.0.1");
+		new FileSyncClient(conf).start();
 	}
 }
