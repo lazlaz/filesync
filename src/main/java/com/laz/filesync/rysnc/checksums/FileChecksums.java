@@ -26,9 +26,15 @@ public class FileChecksums implements Serializable{
 	private List<BlockChecksums> blockChecksums = new ArrayList<BlockChecksums>();
 
 	public FileChecksums(File file) {
+		this(file,true);
+	}
+	
+	public FileChecksums(File file,boolean blockCheck) {
 		this.name = file.getName();
 		this.checksum = generateFileDigest(file);
-		this.blockChecksums = generateBlockChecksums(file);
+		if (blockCheck) {
+			this.blockChecksums = generateBlockChecksums(file);
+		}
 	}
 
 	private List<BlockChecksums> generateBlockChecksums(File file) {
@@ -49,6 +55,12 @@ public class FileChecksums implements Serializable{
 			throw new RsyncException(e);
 		} catch (IOException e) {
 			throw new RsyncException(e);
+		}finally {
+			try {
+				fis.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return list;
 	}

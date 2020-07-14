@@ -5,17 +5,35 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Calendar;
+import java.util.Map;
 
+import com.laz.filesync.rysnc.checksums.FileChecksums;
 import com.laz.filesync.rysnc.util.Constants;
 import com.laz.filesync.rysnc.util.RsyncException;
 
 public class FileSyncUtil {
 	public static int STAERT_FLAG = 0x12345;
+	public static String NEW_FILE_FLAG = "_new_rsync_file" + STAERT_FLAG;
 
-	public static synchronized File  getServerTempFile(String initName) {
+	public static void getFileCheckSums(File root, File f, Map<String, FileChecksums> map) {
+		if (f.isDirectory()) {
+			for (File file : f.listFiles()) {
+				getFileCheckSums(root, file, map);
+			}
+		} else {
+			FileChecksums checksums = new FileChecksums(f);
+			String rootPath = root.getAbsolutePath();
+			String filePath = f.getAbsolutePath();
+			String path = filePath.substring(rootPath.length() + 1, filePath.length());
+			map.put(path, checksums);
+		}
+	}
+
+	public static synchronized File getServerTempFile(String initName) {
 		String tempPath = System.getProperty("java.io.tmpdir");
 		File tempFolder = new File(tempPath);
 		if (!tempFolder.exists()) {
@@ -73,5 +91,17 @@ public class FileSyncUtil {
 
 	public static void main(String[] args) {
 		System.out.println(getTimeStr());
+	}
+
+	private static ThreadLocal<DecimalFormat> threadLocal = new ThreadLocal<DecimalFormat>() {
+		protected DecimalFormat initialValue() {
+			DecimalFormat df = new DecimalFormat("######0.00");
+			return df;
+		}
+	};
+
+	public static String getDoubleValue(Double d) {
+		DecimalFormat df = threadLocal.get();
+		return df.format(d);
 	}
 }

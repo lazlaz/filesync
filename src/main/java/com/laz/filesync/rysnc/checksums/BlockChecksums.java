@@ -26,16 +26,16 @@ public class BlockChecksums implements Serializable{
 	public BlockChecksums(byte[] buf, long offset, long size) {
 		this.offset = offset;
 		this.size = size;
-		this.weakChecksum = generateWeakChecksum(buf);
-		this.strongChecksum = generateStrongChecksum(buf);
+		this.weakChecksum = generateWeakChecksum(buf,(int)offset,(int)size);
+		this.strongChecksum = generateStrongChecksum(buf,(int)offset,(int)size);
 	}
 	
 	public BlockChecksums(int index,byte[] buf, long offset, long size) {
 		this.index = index;
 		this.offset = offset;
 		this.size = size;
-		this.weakChecksum = generateWeakChecksum(buf);
-		this.strongChecksum = generateStrongChecksum(buf);
+		this.weakChecksum = generateWeakChecksum(buf,0,(int)size);
+		this.strongChecksum = generateStrongChecksum(buf,0,(int)size);
 	}
 	
 	/**
@@ -43,33 +43,24 @@ public class BlockChecksums implements Serializable{
 	 * @param buf
 	 * @return
 	 */
-	private byte[] generateStrongChecksum(byte[] buf) {
+	private byte[] generateStrongChecksum(byte[] buf,int offset,int len) {
 		try {
 			MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-			messageDigest.update(buf);
+			messageDigest.update(buf,offset,len);
 			return messageDigest.digest();
 		} catch (NoSuchAlgorithmException e) {
 			throw new RsyncException(e);
 		}
 	}
 	
-	/**
-	 * adler32 校验
-	 * @param buf
-	 * @return
-	 */
-	private long generateWeakChecksum(byte[] buf) {
-		Adler32 adler32 = new Adler32();
-		adler32.update(buf);
-		return adler32.getValue();
-	}
+
 	
 	/**
 	 * adler32 校验
 	 * @param buf
 	 * @return
 	 */
-	private long generateNextWeakChecksum(byte[] buf, int offset , int length ) {
+	private long generateWeakChecksum(byte[] buf, int offset , int length ) {
 		Adler32 adler32 = new Adler32();
 		adler32.update(buf,offset,length);
 		return adler32.getValue();

@@ -16,6 +16,15 @@ public class DiffFilesSyncMsg extends BaseMsg{
 	private String fileDigest;
 	private long length;
 	private String fileName;
+	private String serverPath;
+	
+	public String getServerPath() {
+		return serverPath;
+	}
+	
+	public void setServerPath(String serverPath) {
+		this.serverPath = serverPath;
+	}
 	
 	public String getFileName() {
 		return fileName;

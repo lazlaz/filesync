@@ -82,9 +82,6 @@ public class RollingChecksum {
 	 */
 	public void rolling() {
 		Map<Long, BlockChecksums> srcMap = converte2Map();
-
-		System.out.println("原始文件块数 : " + srcMap.size());
-
 		if (diffList == null) {
 			diffList = new ArrayList<DiffCheckItem>();
 		}
@@ -203,7 +200,7 @@ public class RollingChecksum {
 			}
 			raf.seek(offset);
 			int re = raf.read(buf, 0, Constants.BLOCK_SIZE);
-			BlockChecksums blk = new BlockChecksums(buf, offset, Constants.BLOCK_SIZE);
+			BlockChecksums blk = new BlockChecksums(buf, offset, re);
 			return blk;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

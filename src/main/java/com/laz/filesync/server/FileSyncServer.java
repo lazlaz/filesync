@@ -58,7 +58,8 @@ public class FileSyncServer {
 						pipeline.addLast("decoder", new ObjectDecoder(1024*1024,
 								ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
 						pipeline.addLast("encoder", new ObjectEncoder());
-						pipeline.addLast("handler", new MsgServerHandler());
+						MsgServerHandler handler = new MsgServerHandler();
+						pipeline.addLast("handler", handler);
 					}
 				});// 通道初始化
 		try {
