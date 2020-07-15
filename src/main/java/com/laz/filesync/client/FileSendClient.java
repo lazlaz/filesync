@@ -1,12 +1,9 @@
 package com.laz.filesync.client;
 
-import java.util.concurrent.ThreadFactory;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.laz.filesync.client.file.handler.MessageEncoder;
-import com.laz.filesync.server.file.handler.FileSendClientHandler;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -20,7 +17,6 @@ public class FileSendClient {
 	private String host;
 	private int port;
 	private static Logger logger = LoggerFactory.getLogger(FileSendClient.class);
-	
 	public FileSendClient(String host,int port) {
 		this.host = host;
 		this.port = port==0?8990:port;
