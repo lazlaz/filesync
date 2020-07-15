@@ -36,8 +36,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	public static final Logger logger = Logger.getLogger(MsgClientHandler.class);
 	private Configuration conf;
-	 //操作系统识别的换行符
-    private static final String CR=System.getProperty("line.separator");
+	// 操作系统识别的换行符
+	private static final String CR = System.getProperty("line.separator");
 
 	public void setConf(Configuration conf) {
 		this.conf = conf;
@@ -59,9 +59,9 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			if (!checkExitDiff(checksumsMsg)) {
 				logger.info("与服务端目录存在差异，开始进行文件同步");
 				File tempFolder = getTempFolder();
-				//处理消息，获取最终差异文件zip包路径
+				// 处理消息，获取最终差异文件zip包路径
 				String zipPath = dealChecksumsMsg(tempFolder, checksumsMsg);
-				sendFile(ctx,zipPath);
+				sendFile(ctx, zipPath);
 			} else {
 				logger.info("服务端与客服端无差异，同步成功");
 				ctx.close();
@@ -73,8 +73,8 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		}
 			break;
 		case ERROR: {
-			ErrorMsg error = (ErrorMsg)msg;
-			logger.error("code"+error.getCode()+" msg:"+error.getMsg());
+			ErrorMsg error = (ErrorMsg) msg;
+			logger.error("code" + error.getCode() + " msg:" + error.getMsg());
 			ctx.channel().close();
 		}
 			break;
@@ -88,18 +88,19 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		Map<String, FileChecksums> clientChecksums = new HashMap<String, FileChecksums>();
 		File clientFolder = new File(conf.getClientPath());
 		FileSyncUtil.getFileCheckSums(clientFolder, clientFolder, clientChecksums);
-		return checkChecksums(checksumsMsg.getChecksumsMap(),clientChecksums);
+		return checkChecksums(checksumsMsg.getChecksumsMap(), clientChecksums);
 	}
 
-	private boolean checkChecksums(Map<String, FileChecksums> serverSums,
-			Map<String, FileChecksums> clientSums) throws Exception {
+	private boolean checkChecksums(Map<String, FileChecksums> serverSums, Map<String, FileChecksums> clientSums)
+			throws Exception {
 		if (serverSums.size() != clientSums.size()) {
 			return false;
 		}
 		for (String k : serverSums.keySet()) {
-			FileChecksums c = serverSums.get(k);
+			FileChecksums serverCheck = serverSums.get(k);
 			FileChecksums clientCheck = clientSums.get(k);
-			if (clientCheck==null || !Coder.encryptBASE64(clientCheck.getChecksum()).equals(Coder.encryptBASE64(clientCheck.getChecksum()))) {
+			if (clientCheck == null || !Coder.encryptBASE64(clientCheck.getChecksum())
+					.equals(Coder.encryptBASE64(serverCheck.getChecksum()))) {
 				return false;
 			}
 		}
@@ -107,39 +108,54 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	}
 
 	private void sendFile(ChannelHandlerContext ctx, String zipPath) {
-		Channel channel = connectFileSever();
-		if (channel != null && channel.isActive()) {
-			File file = new File(zipPath);
-			logger.info("总共传输差异文件容量= "+FileSyncUtil.getDoubleValue((double)file.length()/1024/1024)+"m");
-			DefaultFileRegion fileRegion = new DefaultFileRegion(file, 0, file.length());
-			FileInfo info = new FileInfo();
-			info.setFilename(file.getName());
-			info.setLength(file.length());
-			channel.writeAndFlush(info);
-			channel.writeAndFlush(fileRegion).addListener(future -> {
-				if (future.isSuccess()) {
-					logger.info(file.getAbsolutePath()+"文件传输完成");
-					//通知服务端进行md5验证传输完整性，并进行文件合并
-					DiffFilesSyncMsg msg  = new DiffFilesSyncMsg();
-					msg.setFileDigest(Coder.encryptBASE64(FileSyncUtil.generateFileDigest(file)));
-					msg.setLength(file.length());
-					msg.setFileName(file.getName());
-					msg.setServerPath(conf.getServerPath());
-					ctx.writeAndFlush(msg);
-					
-					//关闭文件传输
-					channel.close();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				FileSendClient fileClient = connectFileSever();
+				try {
+					Channel channel = fileClient.getChannel();
+					if (channel != null && channel.isActive()) {
+						File file = new File(zipPath);
+						logger.info(
+								"总共传输差异文件容量= " + FileSyncUtil.getDoubleValue((double) file.length() / 1024 / 1024) + "m");
+						DefaultFileRegion fileRegion = new DefaultFileRegion(file, 0, file.length());
+						FileInfo info = new FileInfo();
+						info.setFilename(file.getName());
+						info.setLength(file.length());
+						channel.writeAndFlush(info);
+						System.out.println("线程名：" + Thread.currentThread().getName());
+						channel.writeAndFlush(fileRegion).addListener(future -> {
+							if (future.isSuccess()) {
+								logger.info(file.getAbsolutePath() + "文件传输完成");
+								// 通知服务端进行md5验证传输完整性，并进行文件合并
+								DiffFilesSyncMsg msg = new DiffFilesSyncMsg();
+								msg.setFileDigest(Coder.encryptBASE64(FileSyncUtil.generateFileDigest(file)));
+								msg.setLength(file.length());
+								msg.setFileName(file.getName());
+								msg.setServerPath(conf.getServerPath());
+								ctx.writeAndFlush(msg);
+							}
+						});
+					} else {
+						logger.error("连接文件服务器失败");
+					}
+					channel.closeFuture().sync();	
+				}catch(Exception e) {
+					e.printStackTrace();
+				}finally {
+					logger.info("关闭与文件传输服务端连接");
+					fileClient.getGroup().shutdownGracefully();
 				}
-			});
-		} else {
-			logger.error("连接文件服务器失败");
-		}
+			
+			}
+		}).start();
+
 	}
 
-	private Channel connectFileSever() {
+	private FileSendClient connectFileSever() {
 		FileSendClient fileClient = new FileSendClient(conf.getServerIP(), conf.getFilePort());
 		fileClient.start();
-		return fileClient.getChannel();
+		return fileClient;
 	}
 
 	private File getTempFolder() {
@@ -217,7 +233,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			tempDiffFile.createNewFile();
 		}
 		if (diffList == null) {
-			//不存在diff,说明服务端不存在改文件，直接加入同步目录
+			// 不存在diff,说明服务端不存在改文件，直接加入同步目录
 			FileInputStream in = new FileInputStream(new File(filePath));
 			FileOutputStream out = new FileOutputStream(tempDiffFile);
 			IOUtils.copy(in, out);

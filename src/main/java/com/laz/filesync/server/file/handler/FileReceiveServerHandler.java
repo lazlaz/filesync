@@ -51,6 +51,7 @@ public class FileReceiveServerHandler extends ChannelInboundHandlerAdapter {
 		randomAccessFile.close();
 		if (start>=fileLen) {
 			logger.info(file.getAbsolutePath()+"文件接收完成");
+			ctx.close();
 		}
 	}
 

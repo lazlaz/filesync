@@ -7,6 +7,7 @@ import com.laz.filesync.util.FileSyncUtil;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelPromise;
 import io.netty.channel.DefaultFileRegion;
 import io.netty.handler.codec.MessageToByteEncoder;
 import io.netty.util.ReferenceCountUtil;
@@ -30,5 +31,8 @@ public class MessageEncoder extends MessageToByteEncoder<Object> {
 			logger.error("无法识别的消息类型"+msg);
 		}
 	}
-
+	@Override
+	public void close(ChannelHandlerContext ctx, ChannelPromise promise) throws Exception {
+		super.close(ctx, promise);
+	}
 }
