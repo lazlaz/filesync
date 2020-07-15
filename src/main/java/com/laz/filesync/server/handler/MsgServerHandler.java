@@ -68,7 +68,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		File serverFile = FileSyncUtil.getServerTempFile(diffMsg.getFileName());
 		boolean v = verify(serverFile, diffMsg.getFileDigest());
 		if (v) {
-			logger.info("文件完整性校验一致");
+			logger.info("diff包文件完整性校验一致");
 			logger.info("文件解压开始--------------");
 			long start = System.currentTimeMillis();
 			String fileName = serverFile.getName().replace(".zip", "");

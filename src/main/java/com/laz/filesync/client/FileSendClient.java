@@ -1,5 +1,7 @@
 package com.laz.filesync.client;
 
+import java.util.concurrent.ThreadFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,13 +26,17 @@ public class FileSendClient {
 		this.port = port==0?8990:port;
 	}
 	private Channel channel;
-	
+	private NioEventLoopGroup group;
+	public NioEventLoopGroup getGroup() {
+		return group;
+	}
 	public Channel getChannel() {
 		return channel;
 	}
 	public void start() {
 		Bootstrap bootstrap = new Bootstrap();
 		NioEventLoopGroup group = new NioEventLoopGroup();
+		this.group = group;
 		bootstrap.group(group)
 				.channel(NioSocketChannel.class)
 				.handler(new ChannelInitializer<NioSocketChannel>() {

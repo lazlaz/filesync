@@ -12,6 +12,7 @@ import com.laz.filesync.server.handler.MsgServerHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.ChannelInitializer;
@@ -68,7 +69,7 @@ public class FileSyncClient {
 		try {
 			ChannelFuture future = bootstrap.connect(ip,port).sync();
 			logger.info("------------客服端启动----------------");
-			future.channel().closeFuture().await();
+			future.channel().closeFuture().sync();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
