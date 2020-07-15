@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
@@ -22,6 +23,7 @@ import com.laz.filesync.rysnc.util.RsyncFileUtils;
 import com.laz.filesync.server.msg.FileCheckSumsMsg;
 import com.laz.filesync.util.Coder;
 import com.laz.filesync.util.FileSyncUtil;
+import com.laz.filesync.util.FileUtil;
 import com.laz.filesync.util.ZipUtils;
 
 import io.netty.channel.ChannelHandlerContext;
@@ -105,7 +107,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 				if (typeMap.get(k)) {
 					f.mkdirs();
 				} else {
-					f.createNewFile();
+					FileUtil.createFile(f);
 					FileInputStream in = new FileInputStream(new File(srcPath + File.separator + k));
 					FileOutputStream out = new FileOutputStream(f);
 					IOUtils.copy(in,out);

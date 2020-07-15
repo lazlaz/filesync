@@ -25,7 +25,7 @@ public class FileSyncUtil {
 				getFileCheckSums(root, file, map);
 			}
 		} else {
-			FileChecksums checksums = new FileChecksums(f);
+			FileChecksums checksums = new FileChecksums(f,false);
 			String rootPath = root.getAbsolutePath();
 			String filePath = f.getAbsolutePath();
 			String path = filePath.substring(rootPath.length() + 1, filePath.length());

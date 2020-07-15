@@ -39,6 +39,7 @@ public class FileReceiveServerHandler extends ChannelInboundHandlerAdapter {
 			fileLen = byteBuf.readLong();
 			logger.info(fileLen+" "+new String(b));
 		}
+		logger.info("fileName"+fileName);
 		File file = FileSyncUtil.getServerTempFile(fileName);
 		RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
 		randomAccessFile.seek(start);// 移动文件记录指针的位置,

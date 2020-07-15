@@ -26,6 +26,7 @@ import com.laz.filesync.server.msg.FileCheckSumsMsg;
 import com.laz.filesync.server.msg.FileInfo;
 import com.laz.filesync.util.Coder;
 import com.laz.filesync.util.FileSyncUtil;
+import com.laz.filesync.util.FileUtil;
 import com.laz.filesync.util.ZipUtils;
 
 import io.netty.channel.Channel;
@@ -87,7 +88,11 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	private boolean checkExitDiff(FileCheckSumsMsg checksumsMsg) throws Exception {
 		Map<String, FileChecksums> clientChecksums = new HashMap<String, FileChecksums>();
 		File clientFolder = new File(conf.getClientPath());
+		logger.info("生成客服端文件检验和信息");
+		long start = System.currentTimeMillis();
 		FileSyncUtil.getFileCheckSums(clientFolder, clientFolder, clientChecksums);
+		long end = System.currentTimeMillis();
+		logger.info("客服端文件检验和信息生成完成"+(end-start)+"ms");
 		return checkChecksums(checksumsMsg.getChecksumsMap(), clientChecksums);
 	}
 
@@ -216,7 +221,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			// 滚动获取文件之间的差异信息
 			List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
 			long end = System.currentTimeMillis();
-			logger.info("滚动计算： spend time :" + (long) (end - start) + "ms");
+			logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
 			generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
 
 		}
@@ -229,9 +234,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		String filePath = f.getAbsolutePath();
 		String path = filePath.substring(rootPath.length(), filePath.length());
 		File tempDiffFile = new File(tempFolder + path);
-		if (!tempDiffFile.exists()) {
-			tempDiffFile.createNewFile();
-		}
+		FileUtil.createFile(tempDiffFile);
 		if (diffList == null) {
 			// 不存在diff,说明服务端不存在改文件，直接加入同步目录
 			FileInputStream in = new FileInputStream(new File(filePath));
