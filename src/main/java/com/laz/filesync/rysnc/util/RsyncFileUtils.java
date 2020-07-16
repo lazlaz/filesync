@@ -30,7 +30,6 @@ public class RsyncFileUtils {
 		try {
 			FileOutputStream fos = new FileOutputStream(tmpFile);
 			
-			
 			fos.write(ByteTool.intToByte(blockSize, 4));
 			
 			
@@ -82,6 +81,7 @@ public class RsyncFileUtils {
 			
 			if(item.isMatch()){
 				long i = item.getIndex();
+				logger.info(blockSize);
 				srcraf.seek(i*blockSize);
 				//srcraf.write(b, off, len);
 				byte []  by = new byte[blockSize];
@@ -99,7 +99,7 @@ public class RsyncFileUtils {
 		
 		
 	}
-	
+
 	
 	/**
 	 * 将上传的文件转化为对象
@@ -220,24 +220,28 @@ public class RsyncFileUtils {
 	
 	public static void main(String[] args) throws IOException {
 		
-		String basePath = System.getProperty("user.dir");
+//		String basePath = System.getProperty("user.dir");
+//		
+//		File rsyncFile = new File(basePath + "/src/test/resources/" + "tmp");
+//		File srcFile = new File(basePath + "/src/test/resources/" + "lorem.txt");
+//		File newFile = new File(basePath + "/src/test/resources/" + "lorem-new.txt");
+//		File tarFile = new File(basePath + "/src/test/resources/" + "lorem2.txt");
+//		
+//		
+//		RsyncFileUtils ru =  new RsyncFileUtils();
+////		try {
+////			ru.tmp2Item(tmp);
+////		} catch (IOException e) {
+////			// TODO Auto-generated catch block
+////			e.printStackTrace();
+////		}
+//		//ru.combineRsyncFile(srcFile, newFile, rsyncFile);
+//		
+//		System.out.println(RsyncFileUtils.checkFileSame(newFile,tarFile));
+		//tmp2Item(new File("C:\\Users\\lz578\\Desktop\\desktop3.jpg"));
+		byte[] r = ByteTool.intToByte(Constants.BLOCK_SIZE, 4);
 		
-		File rsyncFile = new File(basePath + "/src/test/resources/" + "tmp");
-		File srcFile = new File(basePath + "/src/test/resources/" + "lorem.txt");
-		File newFile = new File(basePath + "/src/test/resources/" + "lorem-new.txt");
-		File tarFile = new File(basePath + "/src/test/resources/" + "lorem2.txt");
-		
-		
-		RsyncFileUtils ru =  new RsyncFileUtils();
-//		try {
-//			ru.tmp2Item(tmp);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		//ru.combineRsyncFile(srcFile, newFile, rsyncFile);
-		
-		System.out.println(RsyncFileUtils.checkFileSame(newFile,tarFile));
+		System.out.println(ByteTool.bytesToInt(r));
 	}
 	
 	

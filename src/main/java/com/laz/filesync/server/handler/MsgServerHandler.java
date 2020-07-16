@@ -24,6 +24,7 @@ import com.laz.filesync.server.msg.FileCheckSumsMsg;
 import com.laz.filesync.util.Coder;
 import com.laz.filesync.util.FileSyncUtil;
 import com.laz.filesync.util.FileUtil;
+import com.laz.filesync.util.PathMap;
 import com.laz.filesync.util.ZipUtils;
 
 import io.netty.channel.ChannelHandlerContext;
@@ -220,7 +221,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	}
 
 	private BaseMsg getCheckSumsMsg(File folder) {
-		Map<String, FileChecksums> checksums = new HashMap<String, FileChecksums>();
+		Map<String, FileChecksums> checksums = new PathMap<String, FileChecksums>();
 		FileSyncUtil.getFileCheckSums(folder, folder, checksums);
 		FileCheckSumsMsg checksumsMsg = new FileCheckSumsMsg();
 		checksumsMsg.setChecksumsMap(checksums);

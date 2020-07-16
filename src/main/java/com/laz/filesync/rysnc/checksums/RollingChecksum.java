@@ -187,7 +187,7 @@ public class RollingChecksum {
 			return start;
 		}
 	}
-
+	
 	/**
 	 * 根据文件偏移量获取每一块的checksum
 	 * 

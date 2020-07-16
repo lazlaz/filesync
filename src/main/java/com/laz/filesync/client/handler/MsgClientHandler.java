@@ -27,6 +27,7 @@ import com.laz.filesync.server.msg.FileInfo;
 import com.laz.filesync.util.Coder;
 import com.laz.filesync.util.FileSyncUtil;
 import com.laz.filesync.util.FileUtil;
+import com.laz.filesync.util.PathMap;
 import com.laz.filesync.util.ZipUtils;
 
 import io.netty.channel.Channel;
@@ -86,7 +87,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	}
 
 	private boolean checkExitDiff(FileCheckSumsMsg checksumsMsg) throws Exception {
-		Map<String, FileChecksums> clientChecksums = new HashMap<String, FileChecksums>();
+		Map<String, FileChecksums> clientChecksums = new PathMap<String, FileChecksums>();
 		File clientFolder = new File(conf.getClientPath());
 		logger.info("生成客服端文件检验和信息");
 		long start = System.currentTimeMillis();
@@ -256,7 +257,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		String rootPath = root.getAbsolutePath();
 		String filePath = f.getAbsolutePath();
 		String path = filePath.substring(rootPath.length() + 1, filePath.length());
-		FileChecksums check = checksumsMap.get(path);
+		FileChecksums check = checksumsMap.get(FileUtil.convertPath(path));
 		List<DiffCheckItem> diffList = new ArrayList<DiffCheckItem>();
 		if (check != null) {
 			RollingChecksum rck = new RollingChecksum(check, f, diffList);

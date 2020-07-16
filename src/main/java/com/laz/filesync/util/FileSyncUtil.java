@@ -29,7 +29,7 @@ public class FileSyncUtil {
 			String rootPath = root.getAbsolutePath();
 			String filePath = f.getAbsolutePath();
 			String path = filePath.substring(rootPath.length() + 1, filePath.length());
-			map.put(path, checksums);
+			map.put(FileUtil.convertPath(path), checksums);
 		}
 	}
 	public static synchronized List<File> getServerTempFolder() {
