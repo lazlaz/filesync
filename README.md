@@ -3,7 +3,7 @@
 思路：  
 ![](./design/flow.png)
 
-###参数说明
+### 参数说明
 -m 以客户端还是服务端模式启动 server:服务端 client:客服端  
 
 -p -port 运行端口  
@@ -18,7 +18,7 @@
 
 -clean 清空生成缓存文件  
 
-###使用示例
+### 使用示例
 服务端：
 
 	java -jar filesync-0.0.1-SNAPSHOT.jar -m server -port 8989 -fileport 8990
