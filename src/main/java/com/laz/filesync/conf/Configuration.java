@@ -11,11 +11,20 @@ public class Configuration {
 	private int port;
 	//文件传输端口
 	private int filePort;
+	//情况缓存文件
+	private boolean clean;
 	//服务端地址
 	private String serverIP;
 	private String clientPath;
 	private String serverPath;
 	
+	public void setClean(boolean clean) {
+		this.clean = clean;
+	}
+	
+	public boolean isClean() {
+		return clean;
+	}
 	public void setClientPath(String clientPath) {
 		this.clientPath = clientPath;
 	}

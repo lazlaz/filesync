@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.laz.filesync.rysnc.util.Constants;
 import com.laz.filesync.rysnc.util.RsyncException;
 
@@ -19,7 +22,7 @@ import com.laz.filesync.rysnc.util.RsyncException;
  *
  */
 public class RollingChecksum {
-
+	private Logger logger = LoggerFactory.getLogger(RollingChecksum.class);
 	/**
 	 * 原始文件
 	 */
@@ -120,7 +123,7 @@ public class RollingChecksum {
 				// System.out.println("diff block : the length:" + item.getData().length);
 			}
 		}
-		System.out.println("文件总大小：" + fileLength + "; 不同块需要数传的大小：" + allDiff);
+		logger.debug("文件总大小：" + fileLength + "; 不同块需要数传的大小：" + allDiff);
 
 	}
 
@@ -181,7 +184,6 @@ public class RollingChecksum {
 			}
 			return start + Constants.BLOCK_SIZE;
 		} else {
-			System.out.println("the diff block:" + (start - offset));
 			return start;
 		}
 	}

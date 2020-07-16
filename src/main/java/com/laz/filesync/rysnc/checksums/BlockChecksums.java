@@ -26,8 +26,8 @@ public class BlockChecksums implements Serializable{
 	public BlockChecksums(byte[] buf, long offset, long size) {
 		this.offset = offset;
 		this.size = size;
-		this.weakChecksum = generateWeakChecksum(buf,(int)offset,(int)size);
-		this.strongChecksum = generateStrongChecksum(buf,(int)offset,(int)size);
+		this.weakChecksum = generateWeakChecksum(buf,0,(int)size);
+		this.strongChecksum = generateStrongChecksum(buf,0,(int)size);
 	}
 	
 	public BlockChecksums(int index,byte[] buf, long offset, long size) {
@@ -65,6 +65,15 @@ public class BlockChecksums implements Serializable{
 		adler32.update(buf,offset,length);
 		return adler32.getValue();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

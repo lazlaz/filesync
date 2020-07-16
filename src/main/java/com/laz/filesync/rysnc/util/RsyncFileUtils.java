@@ -8,11 +8,13 @@ import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.laz.filesync.rysnc.checksums.DiffCheckItem;
 import com.laz.filesync.rysnc.checksums.DiffFileMeta;
 
 public class RsyncFileUtils {
-	
+	private static final Logger logger = Logger.getLogger(RsyncFileUtils.class);
 	private static int SAME = 0;
 	private static  int DIFF = 1;
 	
@@ -39,7 +41,7 @@ public class RsyncFileUtils {
 					
 					//System.out.println("block-"+diffCheckItem.getIndex());
 					
-					fos.write(ByteTool.intToByte(diffCheckItem.getIndex(), 2), 0, 2);
+					fos.write(ByteTool.intToByte((int)diffCheckItem.getIndex(), 2), 0, 2);
 					
 				}else{
 					fos.write(ByteTool.intToByte(DIFF, 1), 0, 1);
@@ -76,11 +78,10 @@ public class RsyncFileUtils {
 		FileOutputStream fos = new FileOutputStream(newFile);
 		
 		RandomAccessFile srcraf = new RandomAccessFile(srcFile, "r");
-		
 		for (DiffCheckItem item : dfm.getDiffList()) {
 			
 			if(item.isMatch()){
-				int i = item.getIndex();
+				long i = item.getIndex();
 				srcraf.seek(i*blockSize);
 				//srcraf.write(b, off, len);
 				byte []  by = new byte[blockSize];

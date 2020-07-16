@@ -8,11 +8,11 @@ import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.laz.filesync.rysnc.checksums.FileChecksums;
-import com.laz.filesync.rysnc.util.Constants;
 import com.laz.filesync.rysnc.util.RsyncException;
 
 public class FileSyncUtil {
@@ -32,7 +32,21 @@ public class FileSyncUtil {
 			map.put(path, checksums);
 		}
 	}
-
+	public static synchronized List<File> getServerTempFolder() {
+		String tempPath = System.getProperty("java.io.tmpdir");
+		File tempFolder = new File(tempPath);
+		List<File> list = new ArrayList<File>();
+		for (File f:tempFolder.listFiles()) {
+			if (f.getName().startsWith(Constants.TEMP_PREFIX)) {
+				LocalDate d = LocalDate.now();
+				int year = d.getYear();
+				if (f.getName().contains(year+"") || f.getName().contains((year+1)+"") || f.getName().contains((year-1)+"")) {
+					list.add(f);
+				}
+			}
+		}
+		return list;
+	}
 	public static synchronized File getServerTempFile(String initName) {
 		String tempPath = System.getProperty("java.io.tmpdir");
 		File tempFolder = new File(tempPath);
@@ -48,9 +62,9 @@ public class FileSyncUtil {
 	public static byte[] generateFileDigest(File file) {
 		FileInputStream fis = null;
 		try {
-			MessageDigest sha = MessageDigest.getInstance(Constants.MD5);
+			MessageDigest sha = MessageDigest.getInstance(com.laz.filesync.rysnc.util.Constants.MD5);
 			fis = new FileInputStream(file);
-			byte[] buf = new byte[Constants.BLOCK_SIZE];
+			byte[] buf = new byte[com.laz.filesync.rysnc.util.Constants.BLOCK_SIZE];
 			int read = 0;
 			while ((read = fis.read(buf)) > 0) {
 				sha.update(buf, 0, read);

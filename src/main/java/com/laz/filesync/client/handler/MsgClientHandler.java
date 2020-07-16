@@ -194,6 +194,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		File folder = new File(path);
 		if (folder.exists() && folder.isDirectory()) {
 			try {
+				logger.info("打印rsync算法超过5s的文件");
 				generateDiffFile(folder, folder, checksumsMsg.getChecksumsMap(), tempFolder);
 				logger.info("生成同步差异文件到缓存目录" + tempFolder.getAbsolutePath());
 				// 形成压缩包
@@ -221,7 +222,9 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			// 滚动获取文件之间的差异信息
 			List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
 			long end = System.currentTimeMillis();
-			logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
+			if ((end-start)>5000) {
+				logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
+			}
 			generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
 
 		}

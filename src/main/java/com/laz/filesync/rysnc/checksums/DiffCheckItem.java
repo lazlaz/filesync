@@ -10,9 +10,9 @@ public class DiffCheckItem {
 	private boolean isMatch;
 	
 	/**
-	 * 匹配，加入匹配号
+	 * 匹配，加入匹配号,设置为long类型，防止srcraf.seek(i*blockSize)超出整数范围，变为负数报错
 	 */
-	private int index;
+	private long index;
 	
 	/**
 	 * 不匹配，写入数据
@@ -27,11 +27,11 @@ public class DiffCheckItem {
 		this.isMatch = isMatch;
 	}
 
-	public int getIndex() {
+	public long getIndex() {
 		return index;
 	}
 
-	public void setIndex(int index) {
+	public void setIndex(long index) {
 		this.index = index;
 	}
 

@@ -29,7 +29,6 @@ public class FileReceiveServerHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		ByteBuf byteBuf = (ByteBuf) msg;
-		System.out.println(msg);
 		if (FileSyncUtil.STAERT_FLAG == byteBuf.getInt(0)) {
 			byteBuf.readInt();
 			int nameLen = byteBuf.readInt();
@@ -38,8 +37,8 @@ public class FileReceiveServerHandler extends ChannelInboundHandlerAdapter {
 			fileName = new String(b);
 			fileLen = byteBuf.readLong();
 			logger.info(fileLen+" "+new String(b));
+			logger.info("fileName"+fileName);
 		}
-		logger.info("fileName"+fileName);
 		File file = FileSyncUtil.getServerTempFile(fileName);
 		RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
 		randomAccessFile.seek(start);// 移动文件记录指针的位置,
