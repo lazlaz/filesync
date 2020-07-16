@@ -220,13 +220,22 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			}
 		} else {
 			long start = System.currentTimeMillis();
-			// 滚动获取文件之间的差异信息
-			List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
-			long end = System.currentTimeMillis();
-			if ((end-start)>5000) {
-				logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
+			String rootPath = root.getAbsolutePath();
+			String path = FileUtil.getRelativePath(f, rootPath);
+			FileChecksums check = checksumsMap.get(FileUtil.convertPath(path));
+			FileChecksums sourceCheckSum = new FileChecksums(f,false);
+			//先判断文件md5是否一致
+			if (check!=null && Coder.encryptBASE64(check.getChecksum()).equals(Coder.encryptBASE64(sourceCheckSum.getChecksum()))) {
+				logger.info(f.getAbsolutePath()+"文件检验和一致，不需要同步");
+			} else {
+				// 滚动获取文件之间的差异信息
+				List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
+				long end = System.currentTimeMillis();
+				if ((end-start)>5000) {
+					logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
+				}
+				generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
 			}
-			generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
 
 		}
 
@@ -236,7 +245,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			throws Exception {
 		String rootPath = root.getAbsolutePath();
 		String filePath = f.getAbsolutePath();
-		String path = filePath.substring(rootPath.length(), filePath.length());
+		String path = FileUtil.getRelativePath(f, rootPath);
 		File tempDiffFile = new File(tempFolder + path);
 		FileUtil.createFile(tempDiffFile);
 		if (diffList == null) {
@@ -253,10 +262,9 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 
 	}
 
-	private List<DiffCheckItem> rollGetDiff(File root, File f, Map<String, FileChecksums> checksumsMap) {
+	private List<DiffCheckItem> rollGetDiff(File root, File f, Map<String, FileChecksums> checksumsMap) throws Exception {
 		String rootPath = root.getAbsolutePath();
-		String filePath = f.getAbsolutePath();
-		String path = filePath.substring(rootPath.length() + 1, filePath.length());
+		String path = FileUtil.getRelativePath(f, rootPath);
 		FileChecksums check = checksumsMap.get(FileUtil.convertPath(path));
 		List<DiffCheckItem> diffList = new ArrayList<DiffCheckItem>();
 		if (check != null) {

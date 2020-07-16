@@ -26,4 +26,18 @@ public class FileUtil {
 		}
 		return path;
 	}
+	
+	/**
+	 * 获取相对路径
+	 * @param f 文件
+	 * @param relative 相对路径
+	 * @return 文件绝对路径减去relative后的路径
+	 */
+	public static String getRelativePath(File f, String relative) {
+		String fPath = f.getAbsolutePath();
+		String rp = new File(relative).getAbsolutePath();
+		int index = fPath.indexOf(rp) + rp.length();
+		String relativepath = index>fPath.length()-1?"":fPath.substring(index+1);
+		return relativepath;
+	}
 }

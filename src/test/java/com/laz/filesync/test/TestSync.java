@@ -16,16 +16,16 @@ import com.laz.filesync.rysnc.util.RsyncFileUtils;
 public class TestSync {
 	@Test
 	public void testCheckSum() throws Exception {
-		File srcFile = new File("D:\\filesync\\server\\2.txt");
-		File updateFile = new File("D:\\filesync\\client\\2.txt");
+		File srcFile = new File("C:\\Users\\lz578\\Desktop\\worldwind.jar");
+		File updateFile = new File("D:\\server\\apache-tomcat-8.0.36-2\\webapps\\SMS\\com\\sunsheen\\jfids\\demo\\worldwind\\worldwind.jar");
 		System.out.println(QuickMD5.getFileMD5Buffer(srcFile));
 		System.out.println(RsyncFileUtils.checkFileSame(updateFile, srcFile));
 	}
 	@Test
 	public void testRolling() throws Exception {
 
-		File srcFile = new File("D:\\filesync\\server\\2.txt");
-		File updateFile = new File("D:\\filesync\\client\\2.txt");
+		File srcFile = new File("C:\\Users\\lz578\\Desktop\\worldwind.jar");
+		File updateFile = new File("D:\\server\\apache-tomcat-8.0.36-2\\webapps\\SMS\\com\\sunsheen\\jfids\\demo\\worldwind\\worldwind.jar");
 		File tmp = new File("D:\\filesync\\server\\1.txt_tmp");
 		File newFile = new File("D:\\filesync\\server\\1.txt_new");
 		long t1 = System.currentTimeMillis();

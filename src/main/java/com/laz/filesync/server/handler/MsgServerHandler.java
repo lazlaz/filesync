@@ -126,7 +126,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		if (f.isDirectory()) {
 			if (f.listFiles().length == 0) {
 				// 空目录删除
-				String path = map.get(getRelativePath(f, serverPath));
+				String path = map.get(FileUtil.getRelativePath(f, serverPath));
 				if (path == null) {
 					f.delete();
 				}
@@ -136,7 +136,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 				}
 			}
 		} else {
-			String rynscFilePath = map.get(getRelativePath(f, serverPath));
+			String rynscFilePath = map.get(FileUtil.getRelativePath(f, serverPath));
 			boolean exist = false;
 			if (rynscFilePath != null) {
 				File rsyncFile = new File(rynscFilePath);
@@ -151,7 +151,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 						logger.error(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
 						throw new RuntimeException(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
 					}
-					exists.add(getRelativePath(f, serverPath));
+					exists.add(FileUtil.getRelativePath(f, serverPath));
 					exist = true;
 				}
 			}
@@ -169,18 +169,12 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		File f = new File("D:\\filesync\\server\\1.txt_new_rsync_file74565");
 		f.renameTo(new File("D:\\\\filesync\\\\server\\\\1.txt"));
 	}
-	private String getRelativePath(File f, String relative) {
-		String fPath = f.getAbsolutePath();
-		String rp = new File(relative).getAbsolutePath();
-		int index = fPath.indexOf(rp) + rp.length();
-		String relativepath = index>fPath.length()-1?"":fPath.substring(index+1);
-		return relativepath;
-	}
+
 
 	private void getFileMap(String filepath, String relative, Map<String, String> pathMap,
 			Map<String, Boolean> typeMap) {
 		File f = new File(filepath);
-		String relativepath = getRelativePath(f, relative);
+		String relativepath = FileUtil.getRelativePath(f, relative);
 		pathMap.put(relativepath, f.getAbsolutePath());
 		if (f.isDirectory()) {
 			typeMap.put(relativepath, true);
@@ -222,7 +216,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 
 	private BaseMsg getCheckSumsMsg(File folder) {
 		Map<String, FileChecksums> checksums = new PathMap<String, FileChecksums>();
-		FileSyncUtil.getFileCheckSums(folder, folder, checksums);
+		FileSyncUtil.getFileCheckSumsAndBlockSums(folder, folder, checksums);
 		FileCheckSumsMsg checksumsMsg = new FileCheckSumsMsg();
 		checksumsMsg.setChecksumsMap(checksums);
 		return checksumsMsg;

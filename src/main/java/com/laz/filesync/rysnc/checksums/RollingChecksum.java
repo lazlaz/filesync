@@ -112,18 +112,7 @@ public class RollingChecksum {
 			}
 		}
 
-		int allDiff = 0;
 
-		for (DiffCheckItem item : diffList) {
-
-			if (item.isMatch()) {
-				// System.out.println("the same block ： index【" + item.getIndex()+"】");
-			} else {
-				allDiff += item.getData().length;
-				// System.out.println("diff block : the length:" + item.getData().length);
-			}
-		}
-		logger.debug("文件总大小：" + fileLength + "; 不同块需要数传的大小：" + allDiff);
 
 	}
 

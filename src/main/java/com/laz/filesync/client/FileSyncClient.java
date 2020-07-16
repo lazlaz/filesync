@@ -8,6 +8,7 @@ import com.laz.filesync.client.msg.RequestMsg;
 import com.laz.filesync.conf.Configuration;
 import com.laz.filesync.server.FileSyncServer;
 import com.laz.filesync.server.handler.MsgServerHandler;
+import com.laz.filesync.util.Constants;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -54,7 +55,7 @@ public class FileSyncClient {
 					protected void initChannel(SocketChannel ch) throws Exception {
 						ChannelPipeline pipeline = ch.pipeline();
 						//输入Handler
-						pipeline.addLast("decoder", new ObjectDecoder(1024*1024,
+						pipeline.addLast("decoder", new ObjectDecoder(Constants.OBJECT_SIZE_LIMIT,
 								ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
 						//输出Handler
 						pipeline.addLast("encoder", new ObjectEncoder());

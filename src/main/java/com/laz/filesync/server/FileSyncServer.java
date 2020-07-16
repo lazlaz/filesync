@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.laz.filesync.conf.Configuration;
 import com.laz.filesync.server.file.handler.FileReceiveServerHandler;
 import com.laz.filesync.server.handler.MsgServerHandler;
+import com.laz.filesync.util.Constants;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -57,7 +58,7 @@ public class FileSyncServer {
 					@Override
 					protected void initChannel(SocketChannel ch) throws Exception {
 						ChannelPipeline pipeline = ch.pipeline();
-						pipeline.addLast("decoder", new ObjectDecoder(1024*1024,
+						pipeline.addLast("decoder", new ObjectDecoder(Constants.OBJECT_SIZE_LIMIT,
 								ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
 						pipeline.addLast("encoder", new ObjectEncoder());
 						MsgServerHandler handler = new MsgServerHandler();

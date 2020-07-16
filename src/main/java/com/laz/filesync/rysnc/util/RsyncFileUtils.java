@@ -71,22 +71,18 @@ public class RsyncFileUtils {
 	 */
 	public static void  combineRsyncFile(File srcFile, File newFile,File rsyncFile) throws IOException{
 		DiffFileMeta dfm = tmp2Item(rsyncFile);
-		
 		int blockSize = dfm.getBlockSize();
-		
 		FileOutputStream fos = new FileOutputStream(newFile);
-		
 		RandomAccessFile srcraf = new RandomAccessFile(srcFile, "r");
+		logger.info("合并文件"+srcFile.getAbsolutePath());
 		for (DiffCheckItem item : dfm.getDiffList()) {
-			
 			if(item.isMatch()){
 				long i = item.getIndex();
-				logger.info(blockSize);
 				srcraf.seek(i*blockSize);
-				//srcraf.write(b, off, len);
 				byte []  by = new byte[blockSize];
-				srcraf.read(by);
-				fos.write(by);
+				//写入对应长度，防止最后一次循环长度不够，多写入问题
+				int len = srcraf.read(by);
+				fos.write(by,0,len);
 			}else{
 				byte []  difby = item.getData();
 				fos.write(difby);

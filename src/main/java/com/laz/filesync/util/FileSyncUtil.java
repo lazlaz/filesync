@@ -19,18 +19,23 @@ public class FileSyncUtil {
 	public static int STAERT_FLAG = 0x12345;
 	public static String NEW_FILE_FLAG = "_new_rsync_file" + STAERT_FLAG;
 
-	public static void getFileCheckSums(File root, File f, Map<String, FileChecksums> map) {
+	public static void getFileCheck(File root, File f, Map<String, FileChecksums> map,boolean blockCheck) {
 		if (f.isDirectory()) {
 			for (File file : f.listFiles()) {
-				getFileCheckSums(root, file, map);
+				getFileCheck(root, file, map,blockCheck);
 			}
 		} else {
-			FileChecksums checksums = new FileChecksums(f,false);
+			FileChecksums checksums = new FileChecksums(f,blockCheck);
 			String rootPath = root.getAbsolutePath();
-			String filePath = f.getAbsolutePath();
-			String path = filePath.substring(rootPath.length() + 1, filePath.length());
+			String path = FileUtil.getRelativePath(f, rootPath);
 			map.put(FileUtil.convertPath(path), checksums);
 		}
+	}
+	public static void getFileCheckSums(File root, File f, Map<String, FileChecksums> map) {
+		getFileCheck(root, f, map, false);
+	}
+	public static void getFileCheckSumsAndBlockSums(File root, File f, Map<String, FileChecksums> map) {
+		getFileCheck(root, f, map, true);
 	}
 	public static synchronized List<File> getServerTempFolder() {
 		String tempPath = System.getProperty("java.io.tmpdir");
