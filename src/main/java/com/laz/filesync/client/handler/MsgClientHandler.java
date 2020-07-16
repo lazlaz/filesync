@@ -57,7 +57,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		}
 			break;
 		case CHECK_SUM: {
-			FileCheckSumsMsg checksumsMsg = (FileCheckSumsMsg) msg;
+			FileCheckSumsMsg checksumsMsg = (FileCheckSumsMsg) msg; 
 			if (!checkExitDiff(checksumsMsg)) {
 				logger.info("与服务端目录存在差异，开始进行文件同步");
 				File tempFolder = getTempFolder();
@@ -132,10 +132,11 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 						System.out.println("线程名：" + Thread.currentThread().getName());
 						channel.writeAndFlush(fileRegion).addListener(future -> {
 							if (future.isSuccess()) {
-								logger.info(file.getAbsolutePath() + "文件传输完成");
+								String checksum = Coder.encryptBASE64(FileSyncUtil.generateFileDigest(file));
+								logger.info(file.getAbsolutePath() + "文件传输完成。检验码:"+checksum);
 								// 通知服务端进行md5验证传输完整性，并进行文件合并
 								DiffFilesSyncMsg msg = new DiffFilesSyncMsg();
-								msg.setFileDigest(Coder.encryptBASE64(FileSyncUtil.generateFileDigest(file)));
+								msg.setFileDigest(checksum);
 								msg.setLength(file.length());
 								msg.setFileName(file.getName());
 								msg.setServerPath(conf.getServerPath());

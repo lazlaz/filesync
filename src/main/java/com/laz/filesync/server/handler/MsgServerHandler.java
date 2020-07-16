@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -49,6 +51,10 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		case SYNC: {
 			DiffFilesSyncMsg diffMsg = (DiffFilesSyncMsg) msg;
 			try {
+				CountDownLatch latch = FileUtil.newCount(diffMsg.getFileDigest());
+				logger.info("等待压缩包接受完成");
+				latch.await(60*5, TimeUnit.SECONDS);
+				logger.info("压缩包接受完成");
 				combineRsyncFile(diffMsg);
 				logger.info("文件同步完成，发送服务端进行同步结果验证");
 				BaseMsg m = getCheckSumsMsg(new File(diffMsg.getServerPath()));
@@ -69,12 +75,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	private void combineRsyncFile(DiffFilesSyncMsg diffMsg) throws Exception {
 		// 进行文件包完整性验证
 		File serverFile = FileSyncUtil.getServerTempFile(diffMsg.getFileName());
-		int n= 10;
-		while (!serverFile.exists() && n>0) {
-			//等待一会文件创建
-			Thread.sleep(1000);
-			n--;
-		}
+		
 		boolean v = verify(serverFile, diffMsg.getFileDigest());
 		if (v) {
 			logger.info("diff包文件完整性校验一致");
@@ -165,7 +166,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			if (!exist) {
 				if (!f.delete()) {
 					logger.error(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
-					throw new RuntimeException(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
+					//throw new RuntimeException(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
 				}
 			}
 		}
@@ -193,7 +194,9 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	}
 
 	private boolean verify(File serverFile, String fileDigest) throws Exception {
+		logger.info("接受的文件检验码:"+fileDigest);
 		String digest1 = Coder.encryptBASE64(FileSyncUtil.generateFileDigest(serverFile));
+		logger.info(serverFile.getAbsolutePath()+"检验码:"+digest1);
 		if (digest1.equals(fileDigest)) {
 			return true;
 		}

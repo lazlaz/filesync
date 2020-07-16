@@ -9,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.laz.filesync.server.FileSyncServer;
+import com.laz.filesync.util.Coder;
 import com.laz.filesync.util.FileSyncUtil;
+import com.laz.filesync.util.FileUtil;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -55,6 +57,8 @@ public class FileReceiveServerHandler extends ChannelInboundHandlerAdapter {
 		randomAccessFile.close();
 		if (start>=fileLen) {
 			logger.info(file.getAbsolutePath()+"文件接收完成");
+			String digest = Coder.encryptBASE64(FileSyncUtil.generateFileDigest(file));
+			FileUtil.countDown(digest);
 			ctx.close();
 		}
 	}

@@ -74,7 +74,7 @@ public class RsyncFileUtils {
 		int blockSize = dfm.getBlockSize();
 		FileOutputStream fos = new FileOutputStream(newFile);
 		RandomAccessFile srcraf = new RandomAccessFile(srcFile, "r");
-		logger.info("合并文件"+srcFile.getAbsolutePath());
+		//logger.info("合并文件"+srcFile.getAbsolutePath());
 		for (DiffCheckItem item : dfm.getDiffList()) {
 			if(item.isMatch()){
 				long i = item.getIndex();

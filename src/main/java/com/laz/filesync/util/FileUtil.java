@@ -2,6 +2,9 @@ package com.laz.filesync.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 
 public class FileUtil {
 	public static boolean createFile(File file) throws IOException {
@@ -14,7 +17,18 @@ public class FileUtil {
 		}
 		return file.createNewFile();
 	}
-	
+	public static Map<String,CountDownLatch> counts= new HashMap<String,CountDownLatch>();
+	public static synchronized void countDown(String key) {
+		CountDownLatch latch = counts.get(key);
+		if (latch!=null) {
+			latch.countDown();
+		}
+	}
+	public static synchronized CountDownLatch newCount(String key) {
+		CountDownLatch latch = new CountDownLatch(1);
+		counts.put(key, latch);
+		return latch;
+	}
 	/**
 	 * linux系统获取的路径是/ window获取的路径是\,为了统一，统一转换成/
 	 * @param path
