@@ -93,7 +93,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		long start = System.currentTimeMillis();
 		FileSyncUtil.getFileCheckSums(clientFolder, clientFolder, clientChecksums);
 		long end = System.currentTimeMillis();
-		logger.info("客服端文件检验和信息生成完成"+(end-start)+"ms");
+		logger.info("客服端文件检验和信息生成完成" + (end - start) + "ms");
 		return checkChecksums(checksumsMsg.getChecksumsMap(), clientChecksums);
 	}
 
@@ -122,8 +122,8 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 					Channel channel = fileClient.getChannel();
 					if (channel != null && channel.isActive()) {
 						File file = new File(zipPath);
-						logger.info(
-								"总共传输差异文件容量= " + FileSyncUtil.getDoubleValue((double) file.length() / 1024 / 1024) + "m");
+						logger.info("总共传输差异文件容量= " + FileSyncUtil.getDoubleValue((double) file.length() / 1024 / 1024)
+								+ "m");
 						DefaultFileRegion fileRegion = new DefaultFileRegion(file, 0, file.length());
 						FileInfo info = new FileInfo();
 						info.setFilename(file.getName());
@@ -145,14 +145,14 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 					} else {
 						logger.error("连接文件服务器失败");
 					}
-					channel.closeFuture().sync();	
-				}catch(Exception e) {
+					channel.closeFuture().sync();
+				} catch (Exception e) {
 					e.printStackTrace();
-				}finally {
+				} finally {
 					logger.info("关闭与文件传输服务端连接");
 					fileClient.getGroup().shutdownGracefully();
 				}
-			
+
 			}
 		}).start();
 
@@ -220,22 +220,13 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			}
 		} else {
 			long start = System.currentTimeMillis();
-			String rootPath = root.getAbsolutePath();
-			String path = FileUtil.getRelativePath(f, rootPath);
-			FileChecksums check = checksumsMap.get(FileUtil.convertPath(path));
-			FileChecksums sourceCheckSum = new FileChecksums(f,false);
-			//先判断文件md5是否一致
-			if (check!=null && Coder.encryptBASE64(check.getChecksum()).equals(Coder.encryptBASE64(sourceCheckSum.getChecksum()))) {
-				logger.info(f.getAbsolutePath()+"文件检验和一致，不需要同步");
-			} else {
-				// 滚动获取文件之间的差异信息
-				List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
-				long end = System.currentTimeMillis();
-				if ((end-start)>5000) {
-					logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
-				}
-				generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
+			// 滚动获取文件之间的差异信息
+			List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
+			long end = System.currentTimeMillis();
+			if ((end - start) > 5000) {
+				logger.info("滚动计算" + f.getAbsoluteFile() + "： spend time :" + (long) (end - start) + "ms");
 			}
+			generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
 
 		}
 
@@ -246,7 +237,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		String rootPath = root.getAbsolutePath();
 		String filePath = f.getAbsolutePath();
 		String path = FileUtil.getRelativePath(f, rootPath);
-		File tempDiffFile = new File(tempFolder + path);
+		File tempDiffFile = new File(tempFolder + File.separator + path);
 		FileUtil.createFile(tempDiffFile);
 		if (diffList == null) {
 			// 不存在diff,说明服务端不存在改文件，直接加入同步目录
@@ -262,7 +253,8 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 
 	}
 
-	private List<DiffCheckItem> rollGetDiff(File root, File f, Map<String, FileChecksums> checksumsMap) throws Exception {
+	private List<DiffCheckItem> rollGetDiff(File root, File f, Map<String, FileChecksums> checksumsMap)
+			throws Exception {
 		String rootPath = root.getAbsolutePath();
 		String path = FileUtil.getRelativePath(f, rootPath);
 		FileChecksums check = checksumsMap.get(FileUtil.convertPath(path));

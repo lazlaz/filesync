@@ -82,7 +82,9 @@ public class RsyncFileUtils {
 				byte []  by = new byte[blockSize];
 				//写入对应长度，防止最后一次循环长度不够，多写入问题
 				int len = srcraf.read(by);
-				fos.write(by,0,len);
+				if (len > 0) {
+					fos.write(by,0,len);
+				}
 			}else{
 				byte []  difby = item.getData();
 				fos.write(difby);

@@ -69,6 +69,12 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	private void combineRsyncFile(DiffFilesSyncMsg diffMsg) throws Exception {
 		// 进行文件包完整性验证
 		File serverFile = FileSyncUtil.getServerTempFile(diffMsg.getFileName());
+		int n= 10;
+		while (!serverFile.exists() && n>0) {
+			//等待一会文件创建
+			Thread.sleep(1000);
+			n--;
+		}
 		boolean v = verify(serverFile, diffMsg.getFileDigest());
 		if (v) {
 			logger.info("diff包文件完整性校验一致");
@@ -217,6 +223,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	private BaseMsg getCheckSumsMsg(File folder) {
 		Map<String, FileChecksums> checksums = new PathMap<String, FileChecksums>();
 		FileSyncUtil.getFileCheckSumsAndBlockSums(folder, folder, checksums);
+		logger.info(checksums.size()+"----------");
 		FileCheckSumsMsg checksumsMsg = new FileCheckSumsMsg();
 		checksumsMsg.setChecksumsMap(checksums);
 		return checksumsMsg;

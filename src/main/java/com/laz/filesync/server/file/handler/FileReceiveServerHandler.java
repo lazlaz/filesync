@@ -39,6 +39,10 @@ public class FileReceiveServerHandler extends ChannelInboundHandlerAdapter {
 			logger.info(fileLen+" "+new String(b));
 			logger.info("fileName"+fileName);
 		}
+		if (fileName==null) {
+			logger.error("无法获取同步包文件名"+fileName);
+			return ;
+		}
 		File file = FileSyncUtil.getServerTempFile(fileName);
 		RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
 		randomAccessFile.seek(start);// 移动文件记录指针的位置,
