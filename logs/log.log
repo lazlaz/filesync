@@ -19632,3 +19632,193 @@ C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-9-47-34.zip文件传输完成
 C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-9-51-38.zip文件传输完成
 [INFO ] 2020-07-16 09:52:19,915 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:151)
 关闭与文件传输服务端连接
+[INFO ] 2020-07-16 10:01:08,237 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:01:10,192 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:01:12,028 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1836ms
+[INFO ] 2020-07-16 10:01:12,028 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:01:12,038 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:01:12,039 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:01:33,461 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:199)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-1-12
+[INFO ] 2020-07-16 10:01:46,638 method:com.laz.filesync.client.FileSendClient.start(FileSendClient.java:52)
+文件服务器连接成功
+[INFO ] 2020-07-16 10:01:46,639 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:124)
+总共传输差异文件容量= 176.12m
+[INFO ] 2020-07-16 10:01:54,661 method:com.laz.filesync.client.handler.MsgClientHandler$1.lambda$0(MsgClientHandler.java:134)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-1-12.zip文件传输完成
+[INFO ] 2020-07-16 10:01:55,245 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:151)
+关闭与文件传输服务端连接
+[INFO ] 2020-07-16 10:04:55,333 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:04:57,384 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:04:59,148 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1764ms
+[INFO ] 2020-07-16 10:04:59,148 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:04:59,160 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:04:59,160 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:05:18,709 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:199)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-4-59
+[INFO ] 2020-07-16 10:05:31,768 method:com.laz.filesync.client.FileSendClient.start(FileSendClient.java:52)
+文件服务器连接成功
+[INFO ] 2020-07-16 10:05:31,769 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:124)
+总共传输差异文件容量= 176.12m
+[INFO ] 2020-07-16 10:05:39,497 method:com.laz.filesync.client.handler.MsgClientHandler$1.lambda$0(MsgClientHandler.java:134)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-4-59.zip文件传输完成
+[INFO ] 2020-07-16 10:05:40,106 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:151)
+关闭与文件传输服务端连接
+[INFO ] 2020-07-16 10:09:56,935 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:09:59,101 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:10:00,902 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1800ms
+[INFO ] 2020-07-16 10:10:00,902 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:10:00,913 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:10:00,914 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:10:22,005 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:199)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-10-0
+[INFO ] 2020-07-16 10:10:38,427 method:com.laz.filesync.client.FileSendClient.start(FileSendClient.java:52)
+文件服务器连接成功
+[INFO ] 2020-07-16 10:10:38,429 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:124)
+总共传输差异文件容量= 176.12m
+[INFO ] 2020-07-16 10:10:46,052 method:com.laz.filesync.client.handler.MsgClientHandler$1.lambda$0(MsgClientHandler.java:134)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-10-0.zip文件传输完成
+[INFO ] 2020-07-16 10:10:46,668 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:151)
+关闭与文件传输服务端连接
+[INFO ] 2020-07-16 10:33:18,699 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:33:20,702 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:33:22,510 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1807ms
+[INFO ] 2020-07-16 10:33:22,510 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:33:22,521 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:33:22,522 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:33:22,695 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:28,927 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:29,440 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:29,461 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:29,592 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:29,727 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:29,848 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:29,926 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:30,295 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:30,372 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:30,677 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:30,813 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:30,975 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:31,286 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:31,297 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+5120
+[INFO ] 2020-07-16 10:33:48,323 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:33:50,213 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:33:51,970 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1756ms
+[INFO ] 2020-07-16 10:33:51,970 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:33:51,980 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:33:51,981 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:33:52,164 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\changePwd.js :5120
+[INFO ] 2020-07-16 10:33:58,008 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\cron.html :5120
+[INFO ] 2020-07-16 10:33:58,605 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\exticons.gitignore :5120
+[INFO ] 2020-07-16 10:33:58,627 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\homepage.xhtml :5120
+[INFO ] 2020-07-16 10:33:58,763 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\index.xhtml :5120
+[INFO ] 2020-07-16 10:33:59,316 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\m.jsp :5120
+[INFO ] 2020-07-16 10:33:59,442 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main.xhtml :5120
+[INFO ] 2020-07-16 10:33:59,512 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main11.xhtml :5120
+[INFO ] 2020-07-16 10:33:59,876 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main2.xhtml :5120
+[INFO ] 2020-07-16 10:33:59,954 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main3.xhtml :5120
+[INFO ] 2020-07-16 10:34:00,253 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main4.xhtml :5120
+[INFO ] 2020-07-16 10:34:00,385 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main5.xhtml :5120
+[INFO ] 2020-07-16 10:34:00,551 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\main6.xhtml :5120
+[INFO ] 2020-07-16 10:34:00,868 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\pm.xhtml :5120
+[INFO ] 2020-07-16 10:34:00,879 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\README.md :5120
+[INFO ] 2020-07-16 10:34:11,827 method:com.laz.filesync.rysnc.util.RsyncFileUtils.createRsyncFile(RsyncFileUtils.java:33)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51\webMain.xhtml :5120
+[INFO ] 2020-07-16 10:34:11,875 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:199)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51
+[INFO ] 2020-07-16 10:34:24,797 method:com.laz.filesync.client.FileSendClient.start(FileSendClient.java:52)
+文件服务器连接成功
+[INFO ] 2020-07-16 10:34:24,799 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:124)
+总共传输差异文件容量= 176.13m
+[INFO ] 2020-07-16 10:34:32,659 method:com.laz.filesync.client.handler.MsgClientHandler$1.lambda$0(MsgClientHandler.java:134)
+C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-33-51.zip文件传输完成
+[INFO ] 2020-07-16 10:34:33,237 method:com.laz.filesync.client.handler.MsgClientHandler$1.run(MsgClientHandler.java:151)
+关闭与文件传输服务端连接
+[INFO ] 2020-07-16 10:35:53,496 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:35:55,334 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:35:57,085 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1750ms
+[INFO ] 2020-07-16 10:35:57,086 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:35:57,099 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:35:57,100 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:36:42,744 method:com.laz.filesync.client.FileSyncClient.start(FileSyncClient.java:71)
+------------客服端启动----------------
+[INFO ] 2020-07-16 10:36:44,684 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:91)
+生成客服端文件检验和信息
+[INFO ] 2020-07-16 10:36:46,437 method:com.laz.filesync.client.handler.MsgClientHandler.checkExitDiff(MsgClientHandler.java:95)
+客服端文件检验和信息生成完成1753ms
+[INFO ] 2020-07-16 10:36:46,437 method:com.laz.filesync.client.handler.MsgClientHandler.channelRead0(MsgClientHandler.java:61)
+与服务端目录存在差异，开始进行文件同步
+[INFO ] 2020-07-16 10:36:46,449 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:191)
+收到服务端的文件检验和集信息6907
+[INFO ] 2020-07-16 10:36:46,450 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:197)
+打印rsync算法超过5s的文件
+[INFO ] 2020-07-16 10:39:00,410 method:com.laz.filesync.client.handler.MsgClientHandler.generateDiffFile(MsgClientHandler.java:226)
+滚动计算D:\server\apache-tomcat-8.0.36-2\webapps\SMS\anonymous\borderlayout.xhtml： spend time :133960ms
+[INFO ] 2020-07-16 10:39:21,024 method:com.laz.filesync.client.handler.MsgClientHandler.dealChecksumsMsg(MsgClientHandler.java:199)
+生成同步差异文件到缓存目录C:\Users\lz578\AppData\Local\Temp\diff-2020-7-16-10-36-46
