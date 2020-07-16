@@ -19,6 +19,9 @@
 -clean 清空生成缓存文件  
 
 ### 使用示例
+利用maven命令生成工具包：
+
+	mvn package
 服务端：
 
 	java -jar filesync-0.0.1-SNAPSHOT.jar -m server -port 8989 -fileport 8990
