@@ -1,8 +1,9 @@
 package com.laz.filesync.client.msg;
 
+import java.util.Set;
+
 import com.laz.filesync.msg.BaseMsg;
 import com.laz.filesync.msg.MsgType;
-import com.laz.filesync.rysnc.checksums.FileChecksums;
 
 /**
  * 服务端接受有差异的文件信息
@@ -17,7 +18,15 @@ public class DiffFilesSyncMsg extends BaseMsg{
 	private long length;
 	private String fileName;
 	private String serverPath;
+	private Set<String> noSynsFileSets;
 	
+	public void setNoSynsFileSets(Set<String> noSynsFileSets) {
+		this.noSynsFileSets = noSynsFileSets;
+	}
+	
+	public Set<String> getNoSynsFileSets() {
+		return noSynsFileSets;
+	}
 	public String getServerPath() {
 		return serverPath;
 	}

@@ -38,6 +38,7 @@ public class FileSyncMain {
 			for (File file : tempFile) {
 				if (file.isDirectory()) {
 					try {
+						logger.info("清除："+file.getAbsolutePath());
 						FileUtils.deleteDirectory(file);
 					} catch (IOException e) {
 						e.printStackTrace();

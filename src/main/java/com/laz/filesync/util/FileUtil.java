@@ -22,12 +22,20 @@ public class FileUtil {
 		CountDownLatch latch = counts.get(key);
 		if (latch!=null) {
 			latch.countDown();
+		} else {
+			CountDownLatch l = new CountDownLatch(1);
+			counts.put(key, l);
 		}
 	}
 	public static synchronized CountDownLatch newCount(String key) {
-		CountDownLatch latch = new CountDownLatch(1);
-		counts.put(key, latch);
-		return latch;
+		if (counts.get(key)==null) {
+			CountDownLatch latch = new CountDownLatch(1);
+			counts.put(key, latch);
+			return latch;
+		} else {
+			//说明先完成的文件上传，不需要等待
+			return null;
+		}
 	}
 	/**
 	 * linux系统获取的路径是/ window获取的路径是\,为了统一，统一转换成/

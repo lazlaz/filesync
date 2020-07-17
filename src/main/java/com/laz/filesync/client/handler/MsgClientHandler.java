@@ -4,9 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
@@ -61,9 +62,11 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			if (!checkExitDiff(checksumsMsg)) {
 				logger.info("与服务端目录存在差异，开始进行文件同步");
 				File tempFolder = getTempFolder();
+				//存储不需要同步的文件路径信息
+				Set<String> noSynsFileSets = new HashSet<String>();
 				// 处理消息，获取最终差异文件zip包路径
-				String zipPath = dealChecksumsMsg(tempFolder, checksumsMsg);
-				sendFile(ctx, zipPath);
+				String zipPath = dealChecksumsMsg(tempFolder, checksumsMsg,noSynsFileSets);
+				sendFile(ctx, zipPath,noSynsFileSets);
 			} else {
 				logger.info("服务端与客服端无差异，同步成功");
 				ctx.close();
@@ -113,7 +116,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		return true;
 	}
 
-	private void sendFile(ChannelHandlerContext ctx, String zipPath) {
+	private void sendFile(ChannelHandlerContext ctx, String zipPath, Set<String> noSynsFileSets) {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -139,6 +142,7 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 								msg.setFileDigest(checksum);
 								msg.setLength(file.length());
 								msg.setFileName(file.getName());
+								msg.setNoSynsFileSets(noSynsFileSets);
 								msg.setServerPath(conf.getServerPath());
 								ctx.writeAndFlush(msg);
 							}
@@ -189,15 +193,17 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		ctx.writeAndFlush(msg);
 	}
 
-	private String dealChecksumsMsg(File tempFolder, FileCheckSumsMsg checksumsMsg) {
+	private String dealChecksumsMsg(File tempFolder, FileCheckSumsMsg checksumsMsg, Set<String> noSynsFileSets) {
 		logger.info("收到服务端的文件检验和集信息" + checksumsMsg.getChecksumsMap().size());
+		
 		// 根据检验和生成差异文件信息
 		String path = conf.getClientPath();
 		File folder = new File(path);
 		if (folder.exists() && folder.isDirectory()) {
 			try {
 				logger.info("打印rsync算法超过5s的文件");
-				generateDiffFile(folder, folder, checksumsMsg.getChecksumsMap(), tempFolder);
+				
+				generateDiffFile(folder, folder, checksumsMsg.getChecksumsMap(), tempFolder,noSynsFileSets);
 				logger.info("生成同步差异文件到缓存目录" + tempFolder.getAbsolutePath());
 				// 形成压缩包
 				String zipPath = tempFolder.getAbsolutePath() + ".zip";
@@ -213,34 +219,45 @@ public class MsgClientHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		return "";
 	}
 
-	private void generateDiffFile(File root, File f, Map<String, FileChecksums> checksumsMap, File tempFolder)
+	private void generateDiffFile(File root, File f, Map<String, FileChecksums> checksumsMap, File tempFolder, Set<String> noSynsFileSets)
 			throws Exception {
 		if (f.isDirectory()) {
 			for (File file : f.listFiles()) {
-				generateDiffFile(root, file, checksumsMap, tempFolder);
+				generateDiffFile(root, file, checksumsMap, tempFolder,noSynsFileSets);
 			}
 		} else {
 			long start = System.currentTimeMillis();
-			// 滚动获取文件之间的差异信息
-			List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
-			long end = System.currentTimeMillis();
-			if ((end - start) > 5000) {
-				logger.info("滚动计算" + f.getAbsoluteFile() + "： spend time :" + (long) (end - start) + "ms");
+			String rootPath = root.getAbsolutePath();
+			String path = FileUtil.getRelativePath(f, rootPath);
+			FileChecksums check = checksumsMap.get(FileUtil.convertPath(path));
+			FileChecksums sourceCheckSum = new FileChecksums(f,false);
+			//先判断文件md5是否一致
+			if (check!=null && Coder.encryptBASE64(check.getChecksum()).equals(Coder.encryptBASE64(sourceCheckSum.getChecksum()))) {
+				//logger.info(f.getAbsolutePath()+"文件检验和一致，不需要同步");
+				noSynsFileSets.add(FileUtil.convertPath(path));
+			} else {
+				// 滚动获取文件之间的差异信息
+				List<DiffCheckItem> diffList = rollGetDiff(root, f, checksumsMap);
+				long end = System.currentTimeMillis();
+				if ((end-start)>5000) {
+					logger.info("滚动计算"+f.getAbsoluteFile()+"： spend time :" + (long) (end - start) + "ms");
+				}
+				generateDiffFileOnTempFolder(root, f, diffList, tempFolder,noSynsFileSets);
 			}
-			generateDiffFileOnTempFolder(root, f, diffList, tempFolder);
-
 		}
 
 	}
 
-	private void generateDiffFileOnTempFolder(File root, File f, List<DiffCheckItem> diffList, File tempFolder)
+	private void generateDiffFileOnTempFolder(File root, File f, List<DiffCheckItem> diffList, File tempFolder, Set<String> noSynsFileSets)
 			throws Exception {
 		String rootPath = root.getAbsolutePath();
 		String filePath = f.getAbsolutePath();
 		String path = FileUtil.getRelativePath(f, rootPath);
 		File tempDiffFile = new File(tempFolder + File.separator + path);
 		FileUtil.createFile(tempDiffFile);
-		if (diffList == null) {
+		if (noSynsFileSets.contains(FileUtil.convertPath(path))){
+			return ;
+		} else if (diffList == null) {
 			// 不存在diff,说明服务端不存在改文件，直接加入同步目录
 			FileInputStream in = new FileInputStream(new File(filePath));
 			FileOutputStream out = new FileOutputStream(tempDiffFile);

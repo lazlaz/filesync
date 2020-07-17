@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -52,15 +53,17 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			DiffFilesSyncMsg diffMsg = (DiffFilesSyncMsg) msg;
 			try {
 				CountDownLatch latch = FileUtil.newCount(diffMsg.getFileDigest());
-				logger.info("等待压缩包接受完成");
-				latch.await(60*5, TimeUnit.SECONDS);
-				logger.info("压缩包接受完成");
+				if (latch != null) {
+					logger.info("等待压缩包接受完成");
+					latch.await(60 * 5, TimeUnit.SECONDS);
+					logger.info("压缩包接受完成");
+				}
 				combineRsyncFile(diffMsg);
 				logger.info("文件同步完成，发送服务端进行同步结果验证");
 				BaseMsg m = getCheckSumsMsg(new File(diffMsg.getServerPath()));
 				ctx.writeAndFlush(m);
-			}catch(Exception e) {
-				logger.error(ctx.channel().remoteAddress()+"文件同步失败，请客服端重新尝试"+e.getMessage());
+			} catch (Exception e) {
+				logger.error(ctx.channel().remoteAddress() + "文件同步失败，请客服端重新尝试" + e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -75,7 +78,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	private void combineRsyncFile(DiffFilesSyncMsg diffMsg) throws Exception {
 		// 进行文件包完整性验证
 		File serverFile = FileSyncUtil.getServerTempFile(diffMsg.getFileName());
-		
+
 		boolean v = verify(serverFile, diffMsg.getFileDigest());
 		if (v) {
 			logger.info("diff包文件完整性校验一致");
@@ -84,7 +87,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			String fileName = serverFile.getName().replace(".zip", "");
 			String unzipPath = System.getProperty("java.io.tmpdir") + File.separator + fileName;
 			ZipUtils.unzipFile(serverFile, unzipPath);
-			String filepath = unzipPath+File.separator+fileName.substring(0, fileName.indexOf("_server"));
+			String filepath = unzipPath + File.separator + fileName.substring(0, fileName.indexOf("_server"));
 			long end = System.currentTimeMillis();
 			logger.info("文件解压结束--------------" + (end - start) + "ms");
 			// 遍历文件夹，获取同步文件元数据集合信息(key 文件相对路径，文件实际路径)
@@ -93,10 +96,11 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			getFileMap(filepath, filepath, pathMap, typeMap);
 			// 进行存在的文件合并
 			List<String> exists = new ArrayList<String>();
-			combineExistsFile(new File(diffMsg.getServerPath()),diffMsg.getServerPath(), pathMap, exists);
+			combineExistsFile(new File(diffMsg.getServerPath()), diffMsg.getServerPath(), pathMap, exists,
+					diffMsg.getNoSynsFileSets());
 			end = System.currentTimeMillis();
 			logger.info("完成存在的文件合并" + (end - start) + "ms");
-			// 没有找打的文件或文件夹进行新建
+			// 没有找到的文件或文件夹进行新建
 			newCreateFile(typeMap, filepath, diffMsg.getServerPath(), exists);
 			end = System.currentTimeMillis();
 			logger.info("完成不存在的文件新建" + (end - start) + "ms");
@@ -111,6 +115,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		for (String k : typeMap.keySet()) {
 			if (!exists.contains(k)) {
 				File f = new File(desPath + File.separator + k);
+				logger.debug("新建" + f.getAbsolutePath());
 				// 判断文件类型
 				if (typeMap.get(k)) {
 					f.mkdirs();
@@ -118,7 +123,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 					FileUtil.createFile(f);
 					FileInputStream in = new FileInputStream(new File(srcPath + File.separator + k));
 					FileOutputStream out = new FileOutputStream(f);
-					IOUtils.copy(in,out);
+					IOUtils.copy(in, out);
 					IOUtils.closeQuietly(in);
 					IOUtils.closeQuietly(out);
 				}
@@ -126,8 +131,15 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 		}
 	}
 
-	private void combineExistsFile(File f, String serverPath, Map<String, String> map, List<String> exists) throws IOException {
+	private void combineExistsFile(File f, String serverPath, Map<String, String> map, List<String> exists,
+			Set<String> noSynsFileSets) throws IOException {
 		if (serverPath == null) {
+			return;
+		}
+		String p = FileUtil.getRelativePath(f, serverPath);
+		if (noSynsFileSets.contains(FileUtil.convertPath(p))) {
+			exists.add(p);
+			// 不需要同步的文件
 			return;
 		}
 		if (f.isDirectory()) {
@@ -139,7 +151,7 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 				}
 			} else {
 				for (File file : f.listFiles()) {
-					combineExistsFile(file,serverPath, map, exists);
+					combineExistsFile(file, serverPath, map, exists, noSynsFileSets);
 				}
 			}
 		} else {
@@ -150,13 +162,14 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 				if (rsyncFile.isFile()) {
 					String newFilePath = f.getAbsolutePath() + FileSyncUtil.NEW_FILE_FLAG;
 					File newFile = new File(newFilePath);
+					logger.debug("合并" + f.getAbsolutePath());
 					RsyncFileUtils.combineRsyncFile(f, newFile, rsyncFile);
 					boolean flag = f.delete();
 					if (flag) {
 						newFile.renameTo(f);
 					} else {
-						logger.error(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
-						throw new RuntimeException(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
+						logger.error(f.getAbsoluteFile() + "文件不能被删除,检查是否文件被占用或者流未关闭");
+						throw new RuntimeException(f.getAbsoluteFile() + "文件不能被删除,检查是否文件被占用或者流未关闭");
 					}
 					exists.add(FileUtil.getRelativePath(f, serverPath));
 					exist = true;
@@ -164,19 +177,20 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 			}
 			// 不存在进行删除
 			if (!exist) {
+				logger.debug("删除" + f.getAbsolutePath());
 				if (!f.delete()) {
-					logger.error(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
-					//throw new RuntimeException(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
+					logger.error(f.getAbsoluteFile() + "文件不能被删除,检查是否文件被占用或者流未关闭");
+					// throw new RuntimeException(f.getAbsoluteFile()+"文件不能被删除,检查是否文件被占用或者流未关闭");
 				}
 			}
 		}
 
 	}
+
 	public static void main(String[] args) {
 		File f = new File("D:\\filesync\\server\\1.txt_new_rsync_file74565");
 		f.renameTo(new File("D:\\\\filesync\\\\server\\\\1.txt"));
 	}
-
 
 	private void getFileMap(String filepath, String relative, Map<String, String> pathMap,
 			Map<String, Boolean> typeMap) {
@@ -194,9 +208,9 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	}
 
 	private boolean verify(File serverFile, String fileDigest) throws Exception {
-		logger.info("接受的文件检验码:"+fileDigest);
+		logger.info("接受的文件检验码:" + fileDigest);
 		String digest1 = Coder.encryptBASE64(FileSyncUtil.generateFileDigest(serverFile));
-		logger.info(serverFile.getAbsolutePath()+"检验码:"+digest1);
+		logger.info(serverFile.getAbsolutePath() + "检验码:" + digest1);
 		if (digest1.equals(fileDigest)) {
 			return true;
 		}
@@ -226,14 +240,12 @@ public class MsgServerHandler extends SimpleChannelInboundHandler<BaseMsg> {
 	private BaseMsg getCheckSumsMsg(File folder) {
 		Map<String, FileChecksums> checksums = new PathMap<String, FileChecksums>();
 		FileSyncUtil.getFileCheckSumsAndBlockSums(folder, folder, checksums);
-		logger.info(checksums.size()+"----------");
+		logger.info(checksums.size() + "----------");
 		FileCheckSumsMsg checksumsMsg = new FileCheckSumsMsg();
 		checksumsMsg.setChecksumsMap(checksums);
 		return checksumsMsg;
-		
+
 	}
-
-
 
 	/*
 	 * 客户端连接到服务器
